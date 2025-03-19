@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package payment;
+
+service PaymentService {
+  rpc CreateTransaction (TransactionRequest) returns (TransactionResponse);
+  rpc VerifyTransaction (VerifyRequest) returns (VerifyResponse);
+  rpc ProcessFuelPayment (FuelPaymentRequest) returns (FuelPaymentResponse);
+}
+
+message TransactionRequest {
+  string sender_id = 1;
+  string receiver_id = 2;
+  double amount = 3;
+  bytes signature = 4;
+}
+
+message TransactionResponse {
+  bool success = 1;
+  string transaction_id = 2;
+}
+
+message VerifyRequest {
+  string transaction_id = 1;
+}
+
+message VerifyResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message FuelPaymentRequest {
+  double fuel_price_per_liter = 1;
+  double liters = 2;
+  bool is_finished = 3;  // Флаг завершения заправки
+}
+
+message FuelPaymentResponse {
+  bool success = 1;
+  string message = 2;
+}
