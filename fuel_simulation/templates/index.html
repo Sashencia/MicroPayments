@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Simulation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Fuel Station Simulation</h1>
+        <button id="fuel-button">Start Fueling</button>
+        <div class="table-container">
+            <div class="column">
+                <h2>Packet Sending</h2>
+                <table id="packet-log">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Liters</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows will be added here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="status"></div>
+        <div>
+            <h2>Real-Time Fueling</h2>
+            <p>Liters: <span id="real-time-liters">0.000</span></p>
+            <p>Balance: <span id="real-time-balance">1000000.00</span> RUB</p>
+        </div>
+        <div>
+            <h2>Totals</h2>
+            <p>Total Fueled: <span id="total-liters">0.000</span> liters</p>
+            <p>Total Cost: <span id="total-cost">0.00</span> RUB</p>
+            <p>Balance: <span id="balance">1000000.00</span> RUB</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.java') }}"></script>
+</body>
+</html>
