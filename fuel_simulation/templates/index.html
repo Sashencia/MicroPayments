@@ -1,45 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fuel Simulation</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Fuel Station</title>
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+        #fuel-button { 
+            padding: 10px 20px; 
+            background-color: #28a745; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        #fuel-button.stop { background-color: #dc3545; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .data-section { margin: 15px 0; padding: 10px; background: #f5f5f5; }
+    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Fuel Station Simulation</h1>
+        <h1>Fuel Station</h1>
         <button id="fuel-button">Start Fueling</button>
-        <div class="table-container">
-            <div class="column">
-                <h2>Packet Sending</h2>
-                <table id="packet-log">
-                    <thead>
-                        <tr>
-                            <th>Time</th>
-                            <th>Liters</th>
-                            <th>Balance</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Rows will be added here by JavaScript -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div id="status"></div>
-        <div>
-            <h2>Real-Time Fueling</h2>
+        <div id="status">Status: Ready</div>
+        
+        <div class="data-section">
+            <h2>Real-Time Data</h2>
             <p>Liters: <span id="real-time-liters">0.000</span></p>
-            <p>Balance: <span id="real-time-balance">1000000.00</span> RUB</p>
+            <p>Balance: <span id="real-time-balance">0.00</span> RUB</p>
         </div>
-        <div>
+        
+        <div class="data-section">
+            <h2>Packet Sending Log</h2>
+            <table id="packet-log">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Liters</th>
+                        <th>Balance</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="4">No data available</td></tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="data-section">
+            <h2>OPKCMP Buffer</h2>
+            <table id="opkcmp-log">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Liters</th>
+                        <th>Balance</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="4">No data available</td></tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="data-section">
             <h2>Totals</h2>
             <p>Total Fueled: <span id="total-liters">0.000</span> liters</p>
             <p>Total Cost: <span id="total-cost">0.00</span> RUB</p>
-            <p>Balance: <span id="balance">1000000.00</span> RUB</p>
+            <p>Your Balance: <span id="balance">0.00</span> RUB</p>
+            <p>Recipient Balance: <span id="recipient-balance">0.00</span> RUB</p>
         </div>
     </div>
-    <script src="{{ url_for('static', filename='script.java') }}"></script>
+    
+    <script src="/static/script.java"></script> <!-- Подключение JS -->
 </body>
 </html>
