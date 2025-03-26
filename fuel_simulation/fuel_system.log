@@ -1,0 +1,958 @@
+2025-03-26 11:59:56,477 - INFO - Starting fuel system application
+2025-03-26 11:59:56,561 - WARNING -  * Debugger is active!
+2025-03-26 11:59:56,566 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 11:59:57,216 - INFO - 127.0.0.1 - - [26/Mar/2025 11:59:57] "GET / HTTP/1.1" 200 -
+2025-03-26 11:59:57,288 - INFO - 127.0.0.1 - - [26/Mar/2025 11:59:57] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 11:59:58,703 - INFO - 127.0.0.1 - - [26/Mar/2025 11:59:58] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 11:59:58,718 - INFO - 127.0.0.1 - - [26/Mar/2025 11:59:58] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 11:59:59,025 - INFO - 127.0.0.1 - - [26/Mar/2025 11:59:59] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 11:59:59,318 - INFO - 127.0.0.1 - - [26/Mar/2025 11:59:59] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 11:59:59,618 - INFO - 127.0.0.1 - - [26/Mar/2025 11:59:59] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 11:59:59,920 - INFO - 127.0.0.1 - - [26/Mar/2025 11:59:59] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:00:00,220 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:00] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:00:00,515 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:00] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:00:00,818 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:00] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:00:01,116 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:01] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:00:01,421 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:01] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:00:01,718 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:01] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:00:02,016 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:02] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:00:02,320 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:02] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:00:02,626 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:02] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:00:02,920 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:02] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:00:03,227 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:03] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:00:03,538 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:03] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:00:03,649 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:03] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:00:03,671 - INFO - 127.0.0.1 - - [26/Mar/2025 12:00:03] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:13:50,377 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading
+2025-03-26 12:13:51,241 - INFO - Starting fuel system application
+2025-03-26 12:13:51,302 - WARNING -  * Debugger is active!
+2025-03-26 12:13:51,306 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 12:14:13,874 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading
+2025-03-26 12:14:14,687 - INFO - Starting fuel system application
+2025-03-26 12:14:14,792 - WARNING -  * Debugger is active!
+2025-03-26 12:14:14,795 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 12:14:54,794 - INFO - 127.0.0.1 - - [26/Mar/2025 12:14:54] "GET / HTTP/1.1" 200 -
+2025-03-26 12:14:54,922 - INFO - 127.0.0.1 - - [26/Mar/2025 12:14:54] "GET /static/script.java HTTP/1.1" 200 -
+2025-03-26 12:14:56,789 - INFO - OPKCMP: Packet added - Time: 12:14:56.788, Liters: 0.600, Balance: 999967.38, Final: No
+2025-03-26 12:14:56,789 - INFO - 127.0.0.1 - - [26/Mar/2025 12:14:56] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:14:56,845 - INFO - 127.0.0.1 - - [26/Mar/2025 12:14:56] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:14:56,943 - INFO - OPKCMP: Packet added - Time: 12:14:56.943, Liters: 0.600, Balance: 999934.76, Final: No
+2025-03-26 12:14:57,048 - INFO - OPKCMP: Packet added - Time: 12:14:57.048, Liters: 0.600, Balance: 999902.13, Final: No
+2025-03-26 12:14:57,122 - INFO - 127.0.0.1 - - [26/Mar/2025 12:14:57] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:14:57,155 - INFO - OPKCMP: Packet added - Time: 12:14:57.155, Liters: 0.600, Balance: 999869.51, Final: No
+2025-03-26 12:14:57,261 - INFO - OPKCMP: Packet added - Time: 12:14:57.261, Liters: 0.600, Balance: 999836.89, Final: No
+2025-03-26 12:14:57,367 - INFO - OPKCMP: Packet added - Time: 12:14:57.367, Liters: 0.600, Balance: 999804.27, Final: No
+2025-03-26 12:14:57,426 - INFO - 127.0.0.1 - - [26/Mar/2025 12:14:57] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:14:57,473 - INFO - OPKCMP: Packet added - Time: 12:14:57.473, Liters: 0.600, Balance: 999771.65, Final: No
+2025-03-26 12:14:57,579 - INFO - OPKCMP: Packet added - Time: 12:14:57.579, Liters: 0.600, Balance: 999739.02, Final: No
+2025-03-26 12:14:57,684 - INFO - OPKCMP: Packet added - Time: 12:14:57.684, Liters: 0.600, Balance: 999706.40, Final: No
+2025-03-26 12:14:57,724 - INFO - 127.0.0.1 - - [26/Mar/2025 12:14:57] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:14:57,793 - INFO - OPKCMP: Packet added - Time: 12:14:57.792, Liters: 0.600, Balance: 999673.78, Final: No
+2025-03-26 12:14:57,899 - INFO - OPKCMP: Packet added - Time: 12:14:57.899, Liters: 0.600, Balance: 999641.16, Final: No
+2025-03-26 12:14:58,008 - INFO - OPKCMP: Packet added - Time: 12:14:58.008, Liters: 0.600, Balance: 999608.54, Final: No
+2025-03-26 12:14:58,020 - INFO - 127.0.0.1 - - [26/Mar/2025 12:14:58] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:14:58,118 - INFO - OPKCMP: Packet added - Time: 12:14:58.118, Liters: 0.600, Balance: 999575.91, Final: No
+2025-03-26 12:14:58,224 - INFO - OPKCMP: Packet added - Time: 12:14:58.223, Liters: 0.600, Balance: 999543.29, Final: No
+2025-03-26 12:14:58,328 - INFO - 127.0.0.1 - - [26/Mar/2025 12:14:58] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:14:58,330 - INFO - OPKCMP: Packet added - Time: 12:14:58.329, Liters: 0.600, Balance: 999510.67, Final: No
+2025-03-26 12:14:58,437 - INFO - OPKCMP: Packet added - Time: 12:14:58.437, Liters: 0.600, Balance: 999478.05, Final: No
+2025-03-26 12:14:58,544 - INFO - OPKCMP: Packet added - Time: 12:14:58.544, Liters: 0.600, Balance: 999445.43, Final: No
+2025-03-26 12:14:58,615 - INFO - 127.0.0.1 - - [26/Mar/2025 12:14:58] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:14:58,649 - INFO - OPKCMP: Packet added - Time: 12:14:58.649, Liters: 0.600, Balance: 999412.80, Final: No
+2025-03-26 12:14:58,756 - INFO - OPKCMP: Packet added - Time: 12:14:58.756, Liters: 0.600, Balance: 999380.18, Final: No
+2025-03-26 12:14:58,861 - INFO - OPKCMP: Packet added - Time: 12:14:58.861, Liters: 0.600, Balance: 999347.56, Final: No
+2025-03-26 12:14:58,915 - INFO - 127.0.0.1 - - [26/Mar/2025 12:14:58] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:14:58,966 - INFO - OPKCMP: Packet added - Time: 12:14:58.966, Liters: 0.600, Balance: 999314.94, Final: No
+2025-03-26 12:14:59,073 - INFO - OPKCMP: Packet added - Time: 12:14:59.073, Liters: 0.600, Balance: 999282.32, Final: No
+2025-03-26 12:14:59,179 - INFO - OPKCMP: Packet added - Time: 12:14:59.179, Liters: 0.600, Balance: 999249.69, Final: No
+2025-03-26 12:14:59,243 - INFO - 127.0.0.1 - - [26/Mar/2025 12:14:59] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:14:59,285 - INFO - OPKCMP: Packet added - Time: 12:14:59.285, Liters: 0.600, Balance: 999217.07, Final: No
+2025-03-26 12:14:59,393 - INFO - OPKCMP: Packet added - Time: 12:14:59.393, Liters: 0.600, Balance: 999184.45, Final: No
+2025-03-26 12:14:59,498 - INFO - OPKCMP: Packet added - Time: 12:14:59.498, Liters: 0.600, Balance: 999151.83, Final: No
+2025-03-26 12:14:59,522 - INFO - 127.0.0.1 - - [26/Mar/2025 12:14:59] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:14:59,604 - INFO - OPKCMP: Packet added - Time: 12:14:59.604, Liters: 0.600, Balance: 999119.21, Final: No
+2025-03-26 12:14:59,711 - INFO - OPKCMP: Packet added - Time: 12:14:59.710, Liters: 0.600, Balance: 999086.58, Final: No
+2025-03-26 12:14:59,815 - INFO - 127.0.0.1 - - [26/Mar/2025 12:14:59] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:14:59,816 - INFO - OPKCMP: Packet added - Time: 12:14:59.816, Liters: 0.600, Balance: 999053.96, Final: No
+2025-03-26 12:14:59,943 - INFO - OPKCMP: Packet added - Time: 12:14:59.942, Liters: 0.600, Balance: 999021.34, Final: No
+2025-03-26 12:15:00,050 - INFO - OPKCMP: Packet added - Time: 12:15:00.050, Liters: 0.600, Balance: 998988.72, Final: No
+2025-03-26 12:15:00,120 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:00] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:00,154 - INFO - OPKCMP: Packet added - Time: 12:15:00.154, Liters: 0.600, Balance: 998956.10, Final: No
+2025-03-26 12:15:00,260 - INFO - OPKCMP: Packet added - Time: 12:15:00.259, Liters: 0.600, Balance: 998923.47, Final: No
+2025-03-26 12:15:00,367 - INFO - OPKCMP: Packet added - Time: 12:15:00.366, Liters: 0.600, Balance: 998890.85, Final: No
+2025-03-26 12:15:00,418 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:00] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:00,473 - INFO - OPKCMP: Packet added - Time: 12:15:00.473, Liters: 0.600, Balance: 998858.23, Final: No
+2025-03-26 12:15:00,579 - INFO - OPKCMP: Packet added - Time: 12:15:00.578, Liters: 0.600, Balance: 998825.61, Final: No
+2025-03-26 12:15:00,607 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:00] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:15:00,624 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:00] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:00,685 - INFO - OPKCMP: Packet added - Time: 12:15:00.685, Liters: 0.000, Balance: 998825.61, Final: Yes
+2025-03-26 12:15:17,930 - INFO - OPKCMP: Packet added - Time: 12:15:17.930, Liters: 0.600, Balance: 998792.99, Final: No
+2025-03-26 12:15:17,931 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:17] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:15:17,959 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:17] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:18,050 - INFO - OPKCMP: Packet added - Time: 12:15:18.049, Liters: 0.600, Balance: 998760.36, Final: No
+2025-03-26 12:15:18,155 - INFO - OPKCMP: Packet added - Time: 12:15:18.155, Liters: 0.600, Balance: 998727.74, Final: No
+2025-03-26 12:15:18,261 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:18] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:18,262 - INFO - OPKCMP: Packet added - Time: 12:15:18.262, Liters: 0.600, Balance: 998695.12, Final: No
+2025-03-26 12:15:18,369 - INFO - OPKCMP: Packet added - Time: 12:15:18.369, Liters: 0.600, Balance: 998662.50, Final: No
+2025-03-26 12:15:18,474 - INFO - OPKCMP: Packet added - Time: 12:15:18.473, Liters: 0.600, Balance: 998629.88, Final: No
+2025-03-26 12:15:18,554 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:18] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:18,581 - INFO - OPKCMP: Packet added - Time: 12:15:18.580, Liters: 0.600, Balance: 998597.25, Final: No
+2025-03-26 12:15:18,686 - INFO - OPKCMP: Packet added - Time: 12:15:18.685, Liters: 0.600, Balance: 998564.63, Final: No
+2025-03-26 12:15:18,792 - INFO - OPKCMP: Packet added - Time: 12:15:18.792, Liters: 0.600, Balance: 998532.01, Final: No
+2025-03-26 12:15:18,806 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:18] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:15:18,819 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:18] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:18,904 - INFO - OPKCMP: Packet added - Time: 12:15:18.904, Liters: 0.000, Balance: 998532.01, Final: Yes
+2025-03-26 12:15:19,884 - INFO - OPKCMP: Packet added - Time: 12:15:19.884, Liters: 0.600, Balance: 998499.39, Final: No
+2025-03-26 12:15:19,886 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:19] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:15:19,899 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:19] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:19,998 - INFO - OPKCMP: Packet added - Time: 12:15:19.998, Liters: 0.600, Balance: 998466.77, Final: No
+2025-03-26 12:15:20,106 - INFO - OPKCMP: Packet added - Time: 12:15:20.106, Liters: 0.600, Balance: 998434.14, Final: No
+2025-03-26 12:15:20,206 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:20] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:20,213 - INFO - OPKCMP: Packet added - Time: 12:15:20.212, Liters: 0.600, Balance: 998401.52, Final: No
+2025-03-26 12:15:20,322 - INFO - OPKCMP: Packet added - Time: 12:15:20.322, Liters: 0.600, Balance: 998368.90, Final: No
+2025-03-26 12:15:20,376 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:20] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:15:20,385 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:20] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:20,428 - INFO - OPKCMP: Packet added - Time: 12:15:20.428, Liters: 0.000, Balance: 998368.90, Final: Yes
+2025-03-26 12:15:21,010 - INFO - OPKCMP: Packet added - Time: 12:15:21.010, Liters: 0.600, Balance: 998336.28, Final: No
+2025-03-26 12:15:21,011 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:21] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:15:21,025 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:21] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:21,116 - INFO - OPKCMP: Packet added - Time: 12:15:21.116, Liters: 0.600, Balance: 998303.66, Final: No
+2025-03-26 12:15:21,184 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:21] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:15:21,196 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:21] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:21,221 - INFO - OPKCMP: Packet added - Time: 12:15:21.221, Liters: 0.000, Balance: 998303.66, Final: Yes
+2025-03-26 12:15:21,357 - INFO - OPKCMP: Packet added - Time: 12:15:21.357, Liters: 0.600, Balance: 998271.03, Final: No
+2025-03-26 12:15:21,358 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:21] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:15:21,370 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:21] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:21,464 - INFO - OPKCMP: Packet added - Time: 12:15:21.464, Liters: 0.600, Balance: 998238.41, Final: No
+2025-03-26 12:15:21,570 - INFO - OPKCMP: Packet added - Time: 12:15:21.570, Liters: 0.600, Balance: 998205.79, Final: No
+2025-03-26 12:15:21,620 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:21] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:15:21,628 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:21] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:21,676 - INFO - OPKCMP: Packet added - Time: 12:15:21.676, Liters: 0.000, Balance: 998205.79, Final: Yes
+2025-03-26 12:15:21,791 - INFO - OPKCMP: Packet added - Time: 12:15:21.791, Liters: 0.600, Balance: 998173.17, Final: No
+2025-03-26 12:15:21,792 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:21] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:15:21,804 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:21] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:21,900 - INFO - OPKCMP: Packet added - Time: 12:15:21.900, Liters: 0.600, Balance: 998140.55, Final: No
+2025-03-26 12:15:21,954 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:21] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:15:21,963 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:21] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:22,007 - INFO - OPKCMP: Packet added - Time: 12:15:22.007, Liters: 0.000, Balance: 998140.55, Final: Yes
+2025-03-26 12:15:22,109 - INFO - OPKCMP: Packet added - Time: 12:15:22.109, Liters: 0.600, Balance: 998107.92, Final: No
+2025-03-26 12:15:22,109 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:22] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:15:22,124 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:22] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:22,217 - INFO - OPKCMP: Packet added - Time: 12:15:22.217, Liters: 0.600, Balance: 998075.30, Final: No
+2025-03-26 12:15:22,324 - INFO - OPKCMP: Packet added - Time: 12:15:22.324, Liters: 0.600, Balance: 998042.68, Final: No
+2025-03-26 12:15:22,423 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:22] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:22,431 - INFO - OPKCMP: Packet added - Time: 12:15:22.430, Liters: 0.600, Balance: 998010.06, Final: No
+2025-03-26 12:15:22,538 - INFO - OPKCMP: Packet added - Time: 12:15:22.538, Liters: 0.600, Balance: 997977.44, Final: No
+2025-03-26 12:15:22,643 - INFO - OPKCMP: Packet added - Time: 12:15:22.643, Liters: 0.600, Balance: 997944.81, Final: No
+2025-03-26 12:15:22,733 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:22] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:22,749 - INFO - OPKCMP: Packet added - Time: 12:15:22.749, Liters: 0.600, Balance: 997912.19, Final: No
+2025-03-26 12:15:22,862 - INFO - OPKCMP: Packet added - Time: 12:15:22.861, Liters: 0.600, Balance: 997879.57, Final: No
+2025-03-26 12:15:22,967 - INFO - OPKCMP: Packet added - Time: 12:15:22.967, Liters: 0.600, Balance: 997846.95, Final: No
+2025-03-26 12:15:23,024 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:23] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:23,074 - INFO - OPKCMP: Packet added - Time: 12:15:23.074, Liters: 0.600, Balance: 997814.33, Final: No
+2025-03-26 12:15:23,177 - INFO - OPKCMP: Packet added - Time: 12:15:23.177, Liters: 0.600, Balance: 997781.70, Final: No
+2025-03-26 12:15:23,281 - INFO - OPKCMP: Packet added - Time: 12:15:23.281, Liters: 0.600, Balance: 997749.08, Final: No
+2025-03-26 12:15:23,387 - INFO - OPKCMP: Packet added - Time: 12:15:23.387, Liters: 0.600, Balance: 997716.46, Final: No
+2025-03-26 12:15:23,495 - INFO - OPKCMP: Packet added - Time: 12:15:23.495, Liters: 0.600, Balance: 997683.84, Final: No
+2025-03-26 12:15:23,599 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:23] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:23,600 - INFO - OPKCMP: Packet added - Time: 12:15:23.600, Liters: 0.600, Balance: 997651.22, Final: No
+2025-03-26 12:15:23,706 - INFO - OPKCMP: Packet added - Time: 12:15:23.706, Liters: 0.600, Balance: 997618.59, Final: No
+2025-03-26 12:15:23,810 - INFO - OPKCMP: Packet added - Time: 12:15:23.810, Liters: 0.600, Balance: 997585.97, Final: No
+2025-03-26 12:15:23,915 - INFO - OPKCMP: Packet added - Time: 12:15:23.915, Liters: 0.600, Balance: 997553.35, Final: No
+2025-03-26 12:15:24,021 - INFO - OPKCMP: Packet added - Time: 12:15:24.020, Liters: 0.600, Balance: 997520.73, Final: No
+2025-03-26 12:15:24,126 - INFO - OPKCMP: Packet added - Time: 12:15:24.126, Liters: 0.600, Balance: 997488.11, Final: No
+2025-03-26 12:15:24,230 - INFO - OPKCMP: Packet added - Time: 12:15:24.230, Liters: 0.600, Balance: 997455.48, Final: No
+2025-03-26 12:15:24,337 - INFO - OPKCMP: Packet added - Time: 12:15:24.337, Liters: 0.600, Balance: 997422.86, Final: No
+2025-03-26 12:15:24,446 - INFO - OPKCMP: Packet added - Time: 12:15:24.446, Liters: 0.600, Balance: 997390.24, Final: No
+2025-03-26 12:15:24,553 - INFO - OPKCMP: Packet added - Time: 12:15:24.552, Liters: 0.600, Balance: 997357.62, Final: No
+2025-03-26 12:15:24,600 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:24] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:24,660 - INFO - OPKCMP: Packet added - Time: 12:15:24.660, Liters: 0.600, Balance: 997325.00, Final: No
+2025-03-26 12:15:24,764 - INFO - OPKCMP: Packet added - Time: 12:15:24.764, Liters: 0.600, Balance: 997292.37, Final: No
+2025-03-26 12:15:24,870 - INFO - OPKCMP: Packet added - Time: 12:15:24.870, Liters: 0.600, Balance: 997259.75, Final: No
+2025-03-26 12:15:24,978 - INFO - OPKCMP: Packet added - Time: 12:15:24.978, Liters: 0.600, Balance: 997227.13, Final: No
+2025-03-26 12:15:25,083 - INFO - OPKCMP: Packet added - Time: 12:15:25.083, Liters: 0.600, Balance: 997194.51, Final: No
+2025-03-26 12:15:25,189 - INFO - OPKCMP: Packet added - Time: 12:15:25.189, Liters: 0.600, Balance: 997161.89, Final: No
+2025-03-26 12:15:25,295 - INFO - OPKCMP: Packet added - Time: 12:15:25.294, Liters: 0.600, Balance: 997129.26, Final: No
+2025-03-26 12:15:25,400 - INFO - OPKCMP: Packet added - Time: 12:15:25.400, Liters: 0.600, Balance: 997096.64, Final: No
+2025-03-26 12:15:25,504 - INFO - OPKCMP: Packet added - Time: 12:15:25.504, Liters: 0.600, Balance: 997064.02, Final: No
+2025-03-26 12:15:25,587 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:25] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:25,611 - INFO - OPKCMP: Packet added - Time: 12:15:25.611, Liters: 0.600, Balance: 997031.40, Final: No
+2025-03-26 12:15:25,716 - INFO - OPKCMP: Packet added - Time: 12:15:25.716, Liters: 0.600, Balance: 996998.78, Final: No
+2025-03-26 12:15:25,822 - INFO - OPKCMP: Packet added - Time: 12:15:25.822, Liters: 0.600, Balance: 996966.15, Final: No
+2025-03-26 12:15:25,928 - INFO - OPKCMP: Packet added - Time: 12:15:25.928, Liters: 0.600, Balance: 996933.53, Final: No
+2025-03-26 12:15:26,034 - INFO - OPKCMP: Packet added - Time: 12:15:26.033, Liters: 0.600, Balance: 996900.91, Final: No
+2025-03-26 12:15:26,140 - INFO - OPKCMP: Packet added - Time: 12:15:26.140, Liters: 0.600, Balance: 996868.29, Final: No
+2025-03-26 12:15:26,245 - INFO - OPKCMP: Packet added - Time: 12:15:26.244, Liters: 0.600, Balance: 996835.67, Final: No
+2025-03-26 12:15:26,349 - INFO - OPKCMP: Packet added - Time: 12:15:26.349, Liters: 0.600, Balance: 996803.04, Final: No
+2025-03-26 12:15:26,457 - INFO - OPKCMP: Packet added - Time: 12:15:26.457, Liters: 0.600, Balance: 996770.42, Final: No
+2025-03-26 12:15:26,563 - INFO - OPKCMP: Packet added - Time: 12:15:26.563, Liters: 0.600, Balance: 996737.80, Final: No
+2025-03-26 12:15:26,590 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:26] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:26,667 - INFO - OPKCMP: Packet added - Time: 12:15:26.667, Liters: 0.600, Balance: 996705.18, Final: No
+2025-03-26 12:15:26,773 - INFO - OPKCMP: Packet added - Time: 12:15:26.773, Liters: 0.600, Balance: 996672.56, Final: No
+2025-03-26 12:15:26,879 - INFO - OPKCMP: Packet added - Time: 12:15:26.879, Liters: 0.600, Balance: 996639.93, Final: No
+2025-03-26 12:15:26,984 - INFO - OPKCMP: Packet added - Time: 12:15:26.983, Liters: 0.600, Balance: 996607.31, Final: No
+2025-03-26 12:15:27,090 - INFO - OPKCMP: Packet added - Time: 12:15:27.090, Liters: 0.600, Balance: 996574.69, Final: No
+2025-03-26 12:15:27,197 - INFO - OPKCMP: Packet added - Time: 12:15:27.197, Liters: 0.600, Balance: 996542.07, Final: No
+2025-03-26 12:15:27,301 - INFO - OPKCMP: Packet added - Time: 12:15:27.301, Liters: 0.600, Balance: 996509.45, Final: No
+2025-03-26 12:15:27,407 - INFO - OPKCMP: Packet added - Time: 12:15:27.407, Liters: 0.600, Balance: 996476.82, Final: No
+2025-03-26 12:15:27,513 - INFO - OPKCMP: Packet added - Time: 12:15:27.513, Liters: 0.600, Balance: 996444.20, Final: No
+2025-03-26 12:15:27,592 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:27] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:27,621 - INFO - OPKCMP: Packet added - Time: 12:15:27.621, Liters: 0.600, Balance: 996411.58, Final: No
+2025-03-26 12:15:27,728 - INFO - OPKCMP: Packet added - Time: 12:15:27.728, Liters: 0.600, Balance: 996378.96, Final: No
+2025-03-26 12:15:27,833 - INFO - OPKCMP: Packet added - Time: 12:15:27.833, Liters: 0.600, Balance: 996346.34, Final: No
+2025-03-26 12:15:27,939 - INFO - OPKCMP: Packet added - Time: 12:15:27.939, Liters: 0.600, Balance: 996313.71, Final: No
+2025-03-26 12:15:28,044 - INFO - OPKCMP: Packet added - Time: 12:15:28.044, Liters: 0.600, Balance: 996281.09, Final: No
+2025-03-26 12:15:28,151 - INFO - OPKCMP: Packet added - Time: 12:15:28.151, Liters: 0.600, Balance: 996248.47, Final: No
+2025-03-26 12:15:28,257 - INFO - OPKCMP: Packet added - Time: 12:15:28.256, Liters: 0.600, Balance: 996215.85, Final: No
+2025-03-26 12:15:28,367 - INFO - OPKCMP: Packet added - Time: 12:15:28.367, Liters: 0.600, Balance: 996183.23, Final: No
+2025-03-26 12:15:28,476 - INFO - OPKCMP: Packet added - Time: 12:15:28.475, Liters: 0.600, Balance: 996150.60, Final: No
+2025-03-26 12:15:28,581 - INFO - OPKCMP: Packet added - Time: 12:15:28.581, Liters: 0.600, Balance: 996117.98, Final: No
+2025-03-26 12:15:28,601 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:28] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:28,687 - INFO - OPKCMP: Packet added - Time: 12:15:28.687, Liters: 0.600, Balance: 996085.36, Final: No
+2025-03-26 12:15:28,798 - INFO - OPKCMP: Packet added - Time: 12:15:28.798, Liters: 0.600, Balance: 996052.74, Final: No
+2025-03-26 12:15:28,902 - INFO - OPKCMP: Packet added - Time: 12:15:28.901, Liters: 0.600, Balance: 996020.12, Final: No
+2025-03-26 12:15:29,008 - INFO - OPKCMP: Packet added - Time: 12:15:29.008, Liters: 0.600, Balance: 995987.49, Final: No
+2025-03-26 12:15:29,114 - INFO - OPKCMP: Packet added - Time: 12:15:29.114, Liters: 0.600, Balance: 995954.87, Final: No
+2025-03-26 12:15:29,219 - INFO - OPKCMP: Packet added - Time: 12:15:29.219, Liters: 0.600, Balance: 995922.25, Final: No
+2025-03-26 12:15:29,327 - INFO - OPKCMP: Packet added - Time: 12:15:29.327, Liters: 0.600, Balance: 995889.63, Final: No
+2025-03-26 12:15:29,431 - INFO - OPKCMP: Packet added - Time: 12:15:29.431, Liters: 0.600, Balance: 995857.01, Final: No
+2025-03-26 12:15:29,537 - INFO - OPKCMP: Packet added - Time: 12:15:29.536, Liters: 0.600, Balance: 995824.38, Final: No
+2025-03-26 12:15:29,593 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:29] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:29,642 - INFO - OPKCMP: Packet added - Time: 12:15:29.642, Liters: 0.600, Balance: 995791.76, Final: No
+2025-03-26 12:15:29,766 - INFO - OPKCMP: Packet added - Time: 12:15:29.766, Liters: 0.600, Balance: 995759.14, Final: No
+2025-03-26 12:15:29,838 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:29] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:29,877 - INFO - OPKCMP: Packet added - Time: 12:15:29.876, Liters: 0.600, Balance: 995726.52, Final: No
+2025-03-26 12:15:29,927 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:29] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:29,979 - INFO - OPKCMP: Packet added - Time: 12:15:29.979, Liters: 0.600, Balance: 995693.90, Final: No
+2025-03-26 12:15:30,087 - INFO - OPKCMP: Packet added - Time: 12:15:30.086, Liters: 0.600, Balance: 995661.27, Final: No
+2025-03-26 12:15:30,193 - INFO - OPKCMP: Packet added - Time: 12:15:30.193, Liters: 0.600, Balance: 995628.65, Final: No
+2025-03-26 12:15:30,223 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:30] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:30,300 - INFO - OPKCMP: Packet added - Time: 12:15:30.300, Liters: 0.600, Balance: 995596.03, Final: No
+2025-03-26 12:15:30,409 - INFO - OPKCMP: Packet added - Time: 12:15:30.408, Liters: 0.600, Balance: 995563.41, Final: No
+2025-03-26 12:15:30,517 - INFO - OPKCMP: Packet added - Time: 12:15:30.516, Liters: 0.600, Balance: 995530.79, Final: No
+2025-03-26 12:15:30,527 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:30] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:30,625 - INFO - OPKCMP: Packet added - Time: 12:15:30.624, Liters: 0.600, Balance: 995498.16, Final: No
+2025-03-26 12:15:30,732 - INFO - OPKCMP: Packet added - Time: 12:15:30.732, Liters: 0.600, Balance: 995465.54, Final: No
+2025-03-26 12:15:30,803 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:30] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:15:30,815 - INFO - 127.0.0.1 - - [26/Mar/2025 12:15:30] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:15:30,837 - INFO - OPKCMP: Packet added - Time: 12:15:30.837, Liters: 0.000, Balance: 995465.54, Final: Yes
+2025-03-26 12:16:15,229 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading
+2025-03-26 12:16:15,911 - INFO - Starting fuel system application
+2025-03-26 12:16:15,959 - WARNING -  * Debugger is active!
+2025-03-26 12:16:15,962 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 12:16:20,352 - INFO - 127.0.0.1 - - [26/Mar/2025 12:16:20] "GET / HTTP/1.1" 200 -
+2025-03-26 12:16:20,430 - INFO - 127.0.0.1 - - [26/Mar/2025 12:16:20] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 12:16:21,580 - INFO - OPKCMP: Packet added - Time: 12:16:21.580, Liters: 0.060, Balance: 999996.74, Final: No
+2025-03-26 12:16:21,581 - INFO - 127.0.0.1 - - [26/Mar/2025 12:16:21] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:16:21,598 - INFO - 127.0.0.1 - - [26/Mar/2025 12:16:21] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:16:21,693 - INFO - OPKCMP: Packet added - Time: 12:16:21.693, Liters: 0.060, Balance: 999993.48, Final: No
+2025-03-26 12:16:21,799 - INFO - OPKCMP: Packet added - Time: 12:16:21.799, Liters: 0.060, Balance: 999990.21, Final: No
+2025-03-26 12:16:21,901 - INFO - 127.0.0.1 - - [26/Mar/2025 12:16:21] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:16:21,903 - INFO - OPKCMP: Packet added - Time: 12:16:21.903, Liters: 0.060, Balance: 999986.95, Final: No
+2025-03-26 12:16:22,009 - INFO - OPKCMP: Packet added - Time: 12:16:22.009, Liters: 0.060, Balance: 999983.69, Final: No
+2025-03-26 12:16:22,114 - INFO - OPKCMP: Packet added - Time: 12:16:22.114, Liters: 0.060, Balance: 999980.43, Final: No
+2025-03-26 12:16:22,209 - INFO - 127.0.0.1 - - [26/Mar/2025 12:16:22] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:16:22,220 - INFO - OPKCMP: Packet added - Time: 12:16:22.219, Liters: 0.060, Balance: 999977.16, Final: No
+2025-03-26 12:16:22,328 - INFO - OPKCMP: Packet added - Time: 12:16:22.328, Liters: 0.060, Balance: 999973.90, Final: No
+2025-03-26 12:16:22,434 - INFO - OPKCMP: Packet added - Time: 12:16:22.434, Liters: 0.060, Balance: 999970.64, Final: No
+2025-03-26 12:16:22,500 - INFO - 127.0.0.1 - - [26/Mar/2025 12:16:22] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:16:22,539 - INFO - OPKCMP: Packet added - Time: 12:16:22.538, Liters: 0.060, Balance: 999967.38, Final: No
+2025-03-26 12:16:22,643 - INFO - OPKCMP: Packet added - Time: 12:16:22.643, Liters: 0.060, Balance: 999964.12, Final: No
+2025-03-26 12:16:22,750 - INFO - OPKCMP: Packet added - Time: 12:16:22.749, Liters: 0.060, Balance: 999960.85, Final: No
+2025-03-26 12:16:22,795 - INFO - 127.0.0.1 - - [26/Mar/2025 12:16:22] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:16:22,855 - INFO - OPKCMP: Packet added - Time: 12:16:22.854, Liters: 0.060, Balance: 999957.59, Final: No
+2025-03-26 12:16:22,960 - INFO - OPKCMP: Packet added - Time: 12:16:22.960, Liters: 0.060, Balance: 999954.33, Final: No
+2025-03-26 12:16:23,064 - INFO - OPKCMP: Packet added - Time: 12:16:23.064, Liters: 0.060, Balance: 999951.07, Final: No
+2025-03-26 12:16:23,098 - INFO - 127.0.0.1 - - [26/Mar/2025 12:16:23] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:16:23,171 - INFO - OPKCMP: Packet added - Time: 12:16:23.170, Liters: 0.060, Balance: 999947.80, Final: No
+2025-03-26 12:16:23,276 - INFO - OPKCMP: Packet added - Time: 12:16:23.276, Liters: 0.060, Balance: 999944.54, Final: No
+2025-03-26 12:16:23,295 - INFO - 127.0.0.1 - - [26/Mar/2025 12:16:23] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:16:23,309 - INFO - 127.0.0.1 - - [26/Mar/2025 12:16:23] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:16:23,381 - INFO - OPKCMP: Packet added - Time: 12:16:23.381, Liters: 0.000, Balance: 999944.54, Final: Yes
+2025-03-26 12:18:43,355 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading
+2025-03-26 12:18:44,280 - INFO - Starting fuel system application
+2025-03-26 12:18:44,344 - WARNING -  * Debugger is active!
+2025-03-26 12:18:44,348 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 12:18:49,843 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading
+2025-03-26 12:18:50,675 - INFO - Starting fuel system application
+2025-03-26 12:18:50,719 - WARNING -  * Debugger is active!
+2025-03-26 12:18:50,724 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 12:19:04,421 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:04] "GET / HTTP/1.1" 200 -
+2025-03-26 12:19:04,519 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:04] "GET /static/script.java HTTP/1.1" 200 -
+2025-03-26 12:19:05,979 - INFO - OPKCMP: Packet added - Time: 12:19:05.979, Liters: 0.600, Balance: 999967.38, Final: No
+2025-03-26 12:19:05,980 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:05] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:19:05,999 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:05] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:19:06,097 - INFO - OPKCMP: Packet added - Time: 12:19:06.097, Liters: 0.600, Balance: 999934.76, Final: No
+2025-03-26 12:19:06,203 - INFO - OPKCMP: Packet added - Time: 12:19:06.203, Liters: 0.600, Balance: 999902.13, Final: No
+2025-03-26 12:19:06,303 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:06] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:19:06,315 - INFO - OPKCMP: Packet added - Time: 12:19:06.315, Liters: 0.600, Balance: 999869.51, Final: No
+2025-03-26 12:19:06,429 - INFO - OPKCMP: Packet added - Time: 12:19:06.429, Liters: 0.600, Balance: 999836.89, Final: No
+2025-03-26 12:19:06,536 - INFO - OPKCMP: Packet added - Time: 12:19:06.536, Liters: 0.600, Balance: 999804.27, Final: No
+2025-03-26 12:19:06,596 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:06] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:19:06,642 - INFO - OPKCMP: Packet added - Time: 12:19:06.642, Liters: 0.600, Balance: 999771.65, Final: No
+2025-03-26 12:19:06,747 - INFO - OPKCMP: Packet added - Time: 12:19:06.747, Liters: 0.600, Balance: 999739.02, Final: No
+2025-03-26 12:19:06,853 - INFO - OPKCMP: Packet added - Time: 12:19:06.852, Liters: 0.600, Balance: 999706.40, Final: No
+2025-03-26 12:19:06,897 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:06] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:19:06,958 - INFO - OPKCMP: Packet added - Time: 12:19:06.958, Liters: 0.600, Balance: 999673.78, Final: No
+2025-03-26 12:19:07,062 - INFO - OPKCMP: Packet added - Time: 12:19:07.062, Liters: 0.600, Balance: 999641.16, Final: No
+2025-03-26 12:19:07,168 - INFO - OPKCMP: Packet added - Time: 12:19:07.168, Liters: 0.600, Balance: 999608.54, Final: No
+2025-03-26 12:19:07,198 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:07] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:19:07,273 - INFO - OPKCMP: Packet added - Time: 12:19:07.273, Liters: 0.600, Balance: 999575.91, Final: No
+2025-03-26 12:19:07,380 - INFO - OPKCMP: Packet added - Time: 12:19:07.380, Liters: 0.600, Balance: 999543.29, Final: No
+2025-03-26 12:19:07,486 - INFO - OPKCMP: Packet added - Time: 12:19:07.486, Liters: 0.600, Balance: 999510.67, Final: No
+2025-03-26 12:19:07,495 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:07] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:19:07,594 - INFO - OPKCMP: Packet added - Time: 12:19:07.594, Liters: 0.600, Balance: 999478.05, Final: No
+2025-03-26 12:19:07,700 - INFO - OPKCMP: Packet added - Time: 12:19:07.700, Liters: 0.600, Balance: 999445.43, Final: No
+2025-03-26 12:19:07,798 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:07] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:19:07,806 - INFO - OPKCMP: Packet added - Time: 12:19:07.806, Liters: 0.600, Balance: 999412.80, Final: No
+2025-03-26 12:19:07,913 - INFO - OPKCMP: Packet added - Time: 12:19:07.913, Liters: 0.600, Balance: 999380.18, Final: No
+2025-03-26 12:19:08,018 - INFO - OPKCMP: Packet added - Time: 12:19:08.017, Liters: 0.600, Balance: 999347.56, Final: No
+2025-03-26 12:19:08,100 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:08] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:19:08,122 - INFO - OPKCMP: Packet added - Time: 12:19:08.122, Liters: 0.600, Balance: 999314.94, Final: No
+2025-03-26 12:19:08,228 - INFO - OPKCMP: Packet added - Time: 12:19:08.228, Liters: 0.600, Balance: 999282.32, Final: No
+2025-03-26 12:19:08,333 - INFO - OPKCMP: Packet added - Time: 12:19:08.333, Liters: 0.600, Balance: 999249.69, Final: No
+2025-03-26 12:19:08,396 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:08] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:19:08,443 - INFO - OPKCMP: Packet added - Time: 12:19:08.443, Liters: 0.600, Balance: 999217.07, Final: No
+2025-03-26 12:19:08,550 - INFO - OPKCMP: Packet added - Time: 12:19:08.550, Liters: 0.600, Balance: 999184.45, Final: No
+2025-03-26 12:19:08,655 - INFO - OPKCMP: Packet added - Time: 12:19:08.654, Liters: 0.600, Balance: 999151.83, Final: No
+2025-03-26 12:19:08,705 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:08] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:19:08,726 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:08] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:19:08,739 - INFO - 127.0.0.1 - - [26/Mar/2025 12:19:08] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:19:08,759 - INFO - OPKCMP: Packet added - Time: 12:19:08.759, Liters: 0.000, Balance: 999151.83, Final: Yes
+2025-03-26 12:22:35,261 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading
+2025-03-26 12:22:35,950 - INFO - Starting fuel system application
+2025-03-26 12:22:35,994 - WARNING -  * Debugger is active!
+2025-03-26 12:22:35,998 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 12:23:04,114 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading
+2025-03-26 12:23:04,879 - INFO - Starting fuel system application
+2025-03-26 12:23:04,935 - WARNING -  * Debugger is active!
+2025-03-26 12:23:04,938 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 12:23:23,237 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading
+2025-03-26 12:23:23,919 - INFO - Starting fuel system application
+2025-03-26 12:23:23,966 - WARNING -  * Debugger is active!
+2025-03-26 12:23:23,970 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 12:25:27,404 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:27] "GET / HTTP/1.1" 200 -
+2025-03-26 12:25:27,506 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:27] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 12:25:29,380 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:29] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:25:29,397 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:29] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:29,692 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:29] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:29,782 - INFO - OPKCMP: Packet added - Time: 12:25:29.782, Liters: 0.300, Balance: 999983.70, Final: No
+2025-03-26 12:25:29,993 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:29] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:30,294 - INFO - OPKCMP: Packet added - Time: 12:25:30.294, Liters: 0.300, Balance: 999967.40, Final: No
+2025-03-26 12:25:30,305 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:30] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:30,594 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:30] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:30,803 - INFO - OPKCMP: Packet added - Time: 12:25:30.803, Liters: 0.300, Balance: 999951.10, Final: No
+2025-03-26 12:25:30,894 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:30] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:31,198 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:31] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:31,310 - INFO - OPKCMP: Packet added - Time: 12:25:31.310, Liters: 0.300, Balance: 999934.80, Final: No
+2025-03-26 12:25:31,498 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:31] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:31,807 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:31] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:31,820 - INFO - OPKCMP: Packet added - Time: 12:25:31.820, Liters: 0.300, Balance: 999918.50, Final: No
+2025-03-26 12:25:32,100 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:32] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:32,330 - INFO - OPKCMP: Packet added - Time: 12:25:32.330, Liters: 0.300, Balance: 999902.20, Final: No
+2025-03-26 12:25:32,401 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:32] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:32,694 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:32] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:32,841 - INFO - OPKCMP: Packet added - Time: 12:25:32.841, Liters: 0.300, Balance: 999885.90, Final: No
+2025-03-26 12:25:32,994 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:32] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:33,291 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:33] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:33,349 - INFO - OPKCMP: Packet added - Time: 12:25:33.348, Liters: 0.300, Balance: 999869.60, Final: No
+2025-03-26 12:25:33,592 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:33] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:33,857 - INFO - OPKCMP: Packet added - Time: 12:25:33.857, Liters: 0.300, Balance: 999853.30, Final: No
+2025-03-26 12:25:33,895 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:33] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:34,201 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:34] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:34,368 - INFO - OPKCMP: Packet added - Time: 12:25:34.368, Liters: 0.300, Balance: 999837.00, Final: No
+2025-03-26 12:25:34,502 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:34] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:34,805 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:34] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:34,878 - INFO - OPKCMP: Packet added - Time: 12:25:34.878, Liters: 0.300, Balance: 999820.70, Final: No
+2025-03-26 12:25:35,099 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:35] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:35,217 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:35] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:25:35,231 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:35] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:35,284 - INFO - OPKCMP: Packet added - Time: 12:25:35.284, Liters: 0.000, Balance: 999810.92, Final: Yes
+2025-03-26 12:25:35,292 - INFO - OPKCMP: Packet added - Time: 12:25:35.292, Liters: 0.180, Balance: 999810.92, Final: Yes
+2025-03-26 12:25:35,293 - INFO - OPKCMP: Packet added - Time: 12:25:35.293, Liters: 0.000, Balance: 999810.92, Final: Yes
+2025-03-26 12:25:36,153 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:36] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:25:36,167 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:36] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:36,471 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:36] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:36,555 - INFO - OPKCMP: Packet added - Time: 12:25:36.555, Liters: 0.300, Balance: 999794.62, Final: No
+2025-03-26 12:25:36,767 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:36] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:37,066 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:37] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:37,068 - INFO - OPKCMP: Packet added - Time: 12:25:37.067, Liters: 0.300, Balance: 999778.32, Final: No
+2025-03-26 12:25:37,366 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:37] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:37,587 - INFO - OPKCMP: Packet added - Time: 12:25:37.587, Liters: 0.300, Balance: 999762.02, Final: No
+2025-03-26 12:25:37,668 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:37] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:37,973 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:37] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:38,095 - INFO - OPKCMP: Packet added - Time: 12:25:38.095, Liters: 0.300, Balance: 999745.72, Final: No
+2025-03-26 12:25:38,272 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:38] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:38,576 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:38] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:38,603 - INFO - OPKCMP: Packet added - Time: 12:25:38.602, Liters: 0.300, Balance: 999729.42, Final: No
+2025-03-26 12:25:38,874 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:38] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:39,112 - INFO - OPKCMP: Packet added - Time: 12:25:39.112, Liters: 0.300, Balance: 999713.12, Final: No
+2025-03-26 12:25:39,167 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:39] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:39,469 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:39] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:39,621 - INFO - OPKCMP: Packet added - Time: 12:25:39.620, Liters: 0.300, Balance: 999696.82, Final: No
+2025-03-26 12:25:39,773 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:39] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:40,067 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:40] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:40,127 - INFO - OPKCMP: Packet added - Time: 12:25:40.127, Liters: 0.300, Balance: 999680.52, Final: No
+2025-03-26 12:25:40,369 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:40] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:40,637 - INFO - OPKCMP: Packet added - Time: 12:25:40.637, Liters: 0.300, Balance: 999664.22, Final: No
+2025-03-26 12:25:40,669 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:40] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:40,967 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:40] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:41,147 - INFO - OPKCMP: Packet added - Time: 12:25:41.147, Liters: 0.300, Balance: 999647.92, Final: No
+2025-03-26 12:25:41,271 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:41] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:41,575 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:41] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:41,656 - INFO - OPKCMP: Packet added - Time: 12:25:41.656, Liters: 0.300, Balance: 999631.62, Final: No
+2025-03-26 12:25:41,869 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:41] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:41,944 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:41] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:25:41,953 - INFO - 127.0.0.1 - - [26/Mar/2025 12:25:41] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:25:41,963 - INFO - OPKCMP: Packet added - Time: 12:25:41.963, Liters: 0.000, Balance: 999625.10, Final: Yes
+2025-03-26 12:25:41,974 - INFO - OPKCMP: Packet added - Time: 12:25:41.973, Liters: 0.120, Balance: 999625.10, Final: Yes
+2025-03-26 12:25:41,975 - INFO - OPKCMP: Packet added - Time: 12:25:41.975, Liters: 0.000, Balance: 999625.10, Final: Yes
+2025-03-26 12:26:02,062 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:02] "GET / HTTP/1.1" 200 -
+2025-03-26 12:26:02,100 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:02] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 12:26:05,056 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:05] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:26:05,064 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:05] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:05,374 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:05] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:05,458 - INFO - OPKCMP: Packet added - Time: 12:26:05.458, Liters: 0.300, Balance: 999608.80, Final: No
+2025-03-26 12:26:05,676 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:05] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:05,965 - INFO - OPKCMP: Packet added - Time: 12:26:05.965, Liters: 0.300, Balance: 999592.50, Final: No
+2025-03-26 12:26:05,969 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:05] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:06,270 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:06] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:06,473 - INFO - OPKCMP: Packet added - Time: 12:26:06.473, Liters: 0.300, Balance: 999576.20, Final: No
+2025-03-26 12:26:06,574 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:06] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:06,873 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:06] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:06,979 - INFO - OPKCMP: Packet added - Time: 12:26:06.979, Liters: 0.300, Balance: 999559.90, Final: No
+2025-03-26 12:26:07,171 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:07] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:07,470 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:07] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:07,490 - INFO - OPKCMP: Packet added - Time: 12:26:07.490, Liters: 0.300, Balance: 999543.60, Final: No
+2025-03-26 12:26:07,774 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:07] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:07,997 - INFO - OPKCMP: Packet added - Time: 12:26:07.997, Liters: 0.300, Balance: 999527.30, Final: No
+2025-03-26 12:26:08,072 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:08] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:08,378 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:08] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:08,432 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:08] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:26:08,442 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:08] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:08,508 - INFO - OPKCMP: Packet added - Time: 12:26:08.507, Liters: 0.000, Balance: 999514.26, Final: Yes
+2025-03-26 12:26:08,511 - INFO - OPKCMP: Packet added - Time: 12:26:08.511, Liters: 0.240, Balance: 999514.26, Final: Yes
+2025-03-26 12:26:08,511 - INFO - OPKCMP: Packet added - Time: 12:26:08.511, Liters: 0.000, Balance: 999514.26, Final: Yes
+2025-03-26 12:26:15,553 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:15] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:26:15,572 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:15] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:15,865 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:15] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:15,955 - INFO - OPKCMP: Packet added - Time: 12:26:15.955, Liters: 0.300, Balance: 999497.96, Final: No
+2025-03-26 12:26:16,171 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:16] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:16,462 - INFO - OPKCMP: Packet added - Time: 12:26:16.462, Liters: 0.300, Balance: 999481.66, Final: No
+2025-03-26 12:26:16,470 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:16] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:16,772 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:16] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:16,969 - INFO - OPKCMP: Packet added - Time: 12:26:16.969, Liters: 0.300, Balance: 999465.36, Final: No
+2025-03-26 12:26:17,068 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:17] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:17,372 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:17] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:17,478 - INFO - OPKCMP: Packet added - Time: 12:26:17.478, Liters: 0.300, Balance: 999449.06, Final: No
+2025-03-26 12:26:17,664 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:17] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:17,972 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:17] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:17,990 - INFO - OPKCMP: Packet added - Time: 12:26:17.988, Liters: 0.300, Balance: 999432.76, Final: No
+2025-03-26 12:26:18,271 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:18] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:18,502 - INFO - OPKCMP: Packet added - Time: 12:26:18.502, Liters: 0.300, Balance: 999416.46, Final: No
+2025-03-26 12:26:18,573 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:18] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:18,865 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:18] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:19,013 - INFO - OPKCMP: Packet added - Time: 12:26:19.013, Liters: 0.300, Balance: 999400.16, Final: No
+2025-03-26 12:26:19,164 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:19] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:19,468 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:19] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:19,521 - INFO - OPKCMP: Packet added - Time: 12:26:19.521, Liters: 0.300, Balance: 999383.86, Final: No
+2025-03-26 12:26:19,765 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:19] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:20,030 - INFO - OPKCMP: Packet added - Time: 12:26:20.029, Liters: 0.300, Balance: 999367.56, Final: No
+2025-03-26 12:26:20,068 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:20] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:20,368 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:20] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:20,538 - INFO - OPKCMP: Packet added - Time: 12:26:20.538, Liters: 0.300, Balance: 999351.26, Final: No
+2025-03-26 12:26:20,671 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:20] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:20,975 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:20] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:21,048 - INFO - OPKCMP: Packet added - Time: 12:26:21.047, Liters: 0.300, Balance: 999334.96, Final: No
+2025-03-26 12:26:21,236 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:21] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:26:21,250 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:21] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:21,259 - INFO - OPKCMP: Packet added - Time: 12:26:21.259, Liters: 0.000, Balance: 999331.70, Final: Yes
+2025-03-26 12:26:21,264 - INFO - OPKCMP: Packet added - Time: 12:26:21.263, Liters: 0.060, Balance: 999331.70, Final: Yes
+2025-03-26 12:26:21,264 - INFO - OPKCMP: Packet added - Time: 12:26:21.264, Liters: 0.000, Balance: 999331.70, Final: Yes
+2025-03-26 12:26:25,153 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:25] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:26:25,182 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:25] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:25,476 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:25] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:25,556 - INFO - OPKCMP: Packet added - Time: 12:26:25.556, Liters: 0.300, Balance: 999315.40, Final: No
+2025-03-26 12:26:25,771 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:25] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:26,065 - INFO - OPKCMP: Packet added - Time: 12:26:26.065, Liters: 0.300, Balance: 999299.10, Final: No
+2025-03-26 12:26:26,072 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:26] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:26,370 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:26] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:26,578 - INFO - OPKCMP: Packet added - Time: 12:26:26.578, Liters: 0.300, Balance: 999282.80, Final: No
+2025-03-26 12:26:26,648 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:26] "GET / HTTP/1.1" 200 -
+2025-03-26 12:26:26,686 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:26] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 12:26:27,085 - INFO - OPKCMP: Packet added - Time: 12:26:27.084, Liters: 0.300, Balance: 999266.50, Final: No
+2025-03-26 12:26:27,594 - INFO - OPKCMP: Packet added - Time: 12:26:27.594, Liters: 0.300, Balance: 999250.20, Final: No
+2025-03-26 12:26:28,101 - INFO - OPKCMP: Packet added - Time: 12:26:28.101, Liters: 0.300, Balance: 999233.90, Final: No
+2025-03-26 12:26:28,445 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:28] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:26:28,463 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:28] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:28,511 - INFO - OPKCMP: Packet added - Time: 12:26:28.511, Liters: 0.000, Balance: 999224.12, Final: Yes
+2025-03-26 12:26:28,516 - INFO - OPKCMP: Packet added - Time: 12:26:28.516, Liters: 0.180, Balance: 999224.12, Final: Yes
+2025-03-26 12:26:28,516 - INFO - OPKCMP: Packet added - Time: 12:26:28.516, Liters: 0.000, Balance: 999224.12, Final: Yes
+2025-03-26 12:26:31,331 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:31] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:26:31,339 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:31] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:31,648 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:31] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:31,733 - INFO - OPKCMP: Packet added - Time: 12:26:31.733, Liters: 0.300, Balance: 999207.82, Final: No
+2025-03-26 12:26:31,953 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:31] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:32,242 - INFO - OPKCMP: Packet added - Time: 12:26:32.242, Liters: 0.300, Balance: 999191.52, Final: No
+2025-03-26 12:26:32,255 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:32] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:32,550 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:32] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:32,752 - INFO - OPKCMP: Packet added - Time: 12:26:32.752, Liters: 0.300, Balance: 999175.22, Final: No
+2025-03-26 12:26:32,853 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:32] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:33,146 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:33] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:33,258 - INFO - OPKCMP: Packet added - Time: 12:26:33.258, Liters: 0.300, Balance: 999158.92, Final: No
+2025-03-26 12:26:33,446 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:33] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:33,747 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:33] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:33,765 - INFO - OPKCMP: Packet added - Time: 12:26:33.765, Liters: 0.300, Balance: 999142.62, Final: No
+2025-03-26 12:26:34,046 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:34] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:34,277 - INFO - OPKCMP: Packet added - Time: 12:26:34.277, Liters: 0.300, Balance: 999126.32, Final: No
+2025-03-26 12:26:34,346 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:34] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:34,642 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:34] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:34,786 - INFO - OPKCMP: Packet added - Time: 12:26:34.786, Liters: 0.300, Balance: 999110.02, Final: No
+2025-03-26 12:26:34,943 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:34] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:35,215 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:35] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:26:35,229 - INFO - 127.0.0.1 - - [26/Mar/2025 12:26:35] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:26:35,294 - INFO - OPKCMP: Packet added - Time: 12:26:35.294, Liters: 0.000, Balance: 999096.98, Final: Yes
+2025-03-26 12:26:35,301 - INFO - OPKCMP: Packet added - Time: 12:26:35.301, Liters: 0.240, Balance: 999096.98, Final: Yes
+2025-03-26 12:26:35,302 - INFO - OPKCMP: Packet added - Time: 12:26:35.302, Liters: 0.000, Balance: 999096.98, Final: Yes
+2025-03-26 12:34:52,511 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:52] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:34:52,519 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:52] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:52,830 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:52] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:52,913 - INFO - OPKCMP: Packet added - Time: 12:34:52.913, Liters: 0.300, Balance: 999080.68, Final: No
+2025-03-26 12:34:53,016 - INFO - OPKCMP: Packet added - Time: 12:34:53.016, Liters: 0.000, Balance: 999080.68, Final: Yes
+2025-03-26 12:34:53,020 - INFO - OPKCMP: Packet added - Time: 12:34:53.020, Liters: 0.300, Balance: 999080.68, Final: Yes
+2025-03-26 12:34:53,020 - INFO - OPKCMP: Packet added - Time: 12:34:53.020, Liters: 0.000, Balance: 999080.68, Final: Yes
+2025-03-26 12:34:53,124 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:53] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:53,433 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:53] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:53,610 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:53] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:34:53,623 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:53] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:55,537 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:55] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:34:55,544 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:55] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:55,850 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:55] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:55,940 - INFO - OPKCMP: Packet added - Time: 12:34:55.939, Liters: 0.300, Balance: 999064.38, Final: No
+2025-03-26 12:34:56,100 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:56] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:34:56,113 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:56] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:56,148 - INFO - OPKCMP: Packet added - Time: 12:34:56.147, Liters: 0.000, Balance: 999061.12, Final: Yes
+2025-03-26 12:34:56,153 - INFO - OPKCMP: Packet added - Time: 12:34:56.153, Liters: 0.060, Balance: 999061.12, Final: Yes
+2025-03-26 12:34:56,153 - INFO - OPKCMP: Packet added - Time: 12:34:56.153, Liters: 0.000, Balance: 999061.12, Final: Yes
+2025-03-26 12:34:57,536 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:57] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:34:57,551 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:57] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:57,861 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:57] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:57,939 - INFO - OPKCMP: Packet added - Time: 12:34:57.938, Liters: 0.300, Balance: 999044.82, Final: No
+2025-03-26 12:34:58,160 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:58] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:58,447 - INFO - OPKCMP: Packet added - Time: 12:34:58.446, Liters: 0.300, Balance: 999028.52, Final: No
+2025-03-26 12:34:58,464 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:58] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:58,755 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:58] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:58,955 - INFO - OPKCMP: Packet added - Time: 12:34:58.955, Liters: 0.300, Balance: 999012.22, Final: No
+2025-03-26 12:34:59,047 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:59] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:59,359 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:59] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:59,424 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:59] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:34:59,437 - INFO - 127.0.0.1 - - [26/Mar/2025 12:34:59] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:34:59,461 - INFO - OPKCMP: Packet added - Time: 12:34:59.461, Liters: 0.000, Balance: 998999.18, Final: Yes
+2025-03-26 12:34:59,466 - INFO - OPKCMP: Packet added - Time: 12:34:59.466, Liters: 0.240, Balance: 998999.18, Final: Yes
+2025-03-26 12:34:59,467 - INFO - OPKCMP: Packet added - Time: 12:34:59.467, Liters: 0.000, Balance: 998999.18, Final: Yes
+2025-03-26 12:36:02,990 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:02] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:36:03,010 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:03] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:03,317 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:03] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:03,392 - INFO - OPKCMP: Packet added - Time: 12:36:03.392, Liters: 0.300, Balance: 998982.88, Final: No
+2025-03-26 12:36:03,441 - INFO - OPKCMP: Packet added - Time: 12:36:03.441, Liters: 0.000, Balance: 998982.88, Final: Yes
+2025-03-26 12:36:03,447 - INFO - OPKCMP: Packet added - Time: 12:36:03.446, Liters: 0.300, Balance: 998982.88, Final: Yes
+2025-03-26 12:36:03,447 - INFO - OPKCMP: Packet added - Time: 12:36:03.447, Liters: 0.000, Balance: 998982.88, Final: Yes
+2025-03-26 12:36:03,606 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:03] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:03,910 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:03] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:04,231 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:04] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:04,513 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:04] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:04,816 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:04] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:05,111 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:05] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:05,412 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:05] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:05,707 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:05] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:06,007 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:06] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:06,310 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:06] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:06,350 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:06] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:36:06,366 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:06] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:07,072 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:07] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:36:07,090 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:07] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:07,401 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:07] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:07,476 - INFO - OPKCMP: Packet added - Time: 12:36:07.475, Liters: 0.300, Balance: 998966.58, Final: No
+2025-03-26 12:36:07,694 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:07] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:07,985 - INFO - OPKCMP: Packet added - Time: 12:36:07.985, Liters: 0.300, Balance: 998950.28, Final: No
+2025-03-26 12:36:07,992 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:07] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:08,284 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:08] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:08,508 - INFO - OPKCMP: Packet added - Time: 12:36:08.508, Liters: 0.300, Balance: 998933.98, Final: No
+2025-03-26 12:36:08,571 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:08] "GET / HTTP/1.1" 200 -
+2025-03-26 12:36:08,605 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:08] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 12:36:09,015 - INFO - OPKCMP: Packet added - Time: 12:36:09.015, Liters: 0.300, Balance: 998917.68, Final: No
+2025-03-26 12:36:09,121 - INFO - OPKCMP: Packet added - Time: 12:36:09.121, Liters: 0.000, Balance: 998917.68, Final: Yes
+2025-03-26 12:36:09,122 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:09] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:36:09,136 - INFO - OPKCMP: Packet added - Time: 12:36:09.136, Liters: 0.000, Balance: 998917.68, Final: Yes
+2025-03-26 12:36:09,140 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:09] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:11,529 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:11] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:36:11,548 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:11] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:11,847 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:11] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:11,932 - INFO - OPKCMP: Packet added - Time: 12:36:11.932, Liters: 0.300, Balance: 998901.38, Final: No
+2025-03-26 12:36:12,150 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:12] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:12,439 - INFO - OPKCMP: Packet added - Time: 12:36:12.439, Liters: 0.300, Balance: 998885.08, Final: No
+2025-03-26 12:36:12,447 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:12] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:12,637 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:12] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:36:12,647 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:12] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:12,648 - INFO - OPKCMP: Packet added - Time: 12:36:12.648, Liters: 0.000, Balance: 998881.82, Final: Yes
+2025-03-26 12:36:12,657 - INFO - OPKCMP: Packet added - Time: 12:36:12.657, Liters: 0.060, Balance: 998881.82, Final: Yes
+2025-03-26 12:36:12,658 - INFO - OPKCMP: Packet added - Time: 12:36:12.658, Liters: 0.000, Balance: 998881.82, Final: Yes
+2025-03-26 12:36:14,362 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:14] "GET / HTTP/1.1" 200 -
+2025-03-26 12:36:14,407 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:14] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 12:36:14,569 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:14] "GET / HTTP/1.1" 200 -
+2025-03-26 12:36:14,596 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:14] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 12:36:14,740 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:14] "GET / HTTP/1.1" 200 -
+2025-03-26 12:36:14,759 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:14] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 12:36:15,468 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:15] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:36:15,484 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:15] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:15,780 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:15] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:15,871 - INFO - OPKCMP: Packet added - Time: 12:36:15.870, Liters: 0.300, Balance: 998865.52, Final: No
+2025-03-26 12:36:16,087 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:16] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:16,379 - INFO - OPKCMP: Packet added - Time: 12:36:16.379, Liters: 0.300, Balance: 998849.22, Final: No
+2025-03-26 12:36:16,390 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:16] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:16,694 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:16] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:16,887 - INFO - OPKCMP: Packet added - Time: 12:36:16.887, Liters: 0.300, Balance: 998832.92, Final: No
+2025-03-26 12:36:16,994 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:16] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:17,279 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:17] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:17,395 - INFO - OPKCMP: Packet added - Time: 12:36:17.394, Liters: 0.300, Balance: 998816.62, Final: No
+2025-03-26 12:36:17,584 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:17] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:17,893 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:17] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:17,903 - INFO - OPKCMP: Packet added - Time: 12:36:17.903, Liters: 0.300, Balance: 998800.32, Final: No
+2025-03-26 12:36:18,196 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:18] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:18,415 - INFO - OPKCMP: Packet added - Time: 12:36:18.415, Liters: 0.300, Balance: 998784.02, Final: No
+2025-03-26 12:36:18,498 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:18] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:18,784 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:18] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:18,923 - INFO - OPKCMP: Packet added - Time: 12:36:18.923, Liters: 0.300, Balance: 998767.72, Final: No
+2025-03-26 12:36:19,095 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:19] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:19,380 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:19] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:19,432 - INFO - OPKCMP: Packet added - Time: 12:36:19.432, Liters: 0.300, Balance: 998751.42, Final: No
+2025-03-26 12:36:19,682 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:19] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:19,940 - INFO - OPKCMP: Packet added - Time: 12:36:19.940, Liters: 0.300, Balance: 998735.12, Final: No
+2025-03-26 12:36:19,981 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:19] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:20,289 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:20] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:20,449 - INFO - OPKCMP: Packet added - Time: 12:36:20.448, Liters: 0.300, Balance: 998718.82, Final: No
+2025-03-26 12:36:20,588 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:20] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:20,886 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:20] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:20,956 - INFO - OPKCMP: Packet added - Time: 12:36:20.956, Liters: 0.300, Balance: 998702.52, Final: No
+2025-03-26 12:36:21,180 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:21] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:21,466 - INFO - OPKCMP: Packet added - Time: 12:36:21.466, Liters: 0.300, Balance: 998686.22, Final: No
+2025-03-26 12:36:21,493 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:21] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:21,781 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:21] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:21,978 - INFO - OPKCMP: Packet added - Time: 12:36:21.978, Liters: 0.300, Balance: 998669.92, Final: No
+2025-03-26 12:36:22,084 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:22] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:22,392 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:22] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:22,489 - INFO - OPKCMP: Packet added - Time: 12:36:22.488, Liters: 0.300, Balance: 998653.62, Final: No
+2025-03-26 12:36:22,689 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:22] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:22,991 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:22] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:23,011 - INFO - OPKCMP: Packet added - Time: 12:36:23.011, Liters: 0.300, Balance: 998637.32, Final: No
+2025-03-26 12:36:23,293 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:23] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:23,492 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:23] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 12:36:23,506 - INFO - 127.0.0.1 - - [26/Mar/2025 12:36:23] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 12:36:23,522 - INFO - OPKCMP: Packet added - Time: 12:36:23.521, Liters: 0.000, Balance: 998624.28, Final: Yes
+2025-03-26 12:36:23,527 - INFO - OPKCMP: Packet added - Time: 12:36:23.527, Liters: 0.240, Balance: 998624.28, Final: Yes
+2025-03-26 12:36:23,528 - INFO - OPKCMP: Packet added - Time: 12:36:23.528, Liters: 0.000, Balance: 998624.28, Final: Yes
+2025-03-26 12:51:14,997 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading
+2025-03-26 12:51:15,915 - INFO - Starting fuel system application
+2025-03-26 12:51:15,970 - WARNING -  * Debugger is active!
+2025-03-26 12:51:15,973 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 12:52:04,624 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading
+2025-03-26 12:52:05,372 - INFO - Starting fuel system application
+2025-03-26 12:52:05,415 - WARNING -  * Debugger is active!
+2025-03-26 12:52:05,420 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 13:04:39,891 - INFO - Starting fuel system application
+2025-03-26 13:04:39,962 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-26 13:04:39,963 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-26 13:04:39,965 - INFO -  * Restarting with stat
+2025-03-26 13:04:40,541 - INFO - Starting fuel system application
+2025-03-26 13:04:40,586 - WARNING -  * Debugger is active!
+2025-03-26 13:04:40,590 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 13:04:46,601 - INFO - 127.0.0.1 - - [26/Mar/2025 13:04:46] "GET / HTTP/1.1" 200 -
+2025-03-26 13:04:46,633 - INFO - 127.0.0.1 - - [26/Mar/2025 13:04:46] "[33mGET /styles.css HTTP/1.1[0m" 404 -
+2025-03-26 13:04:46,637 - INFO - 127.0.0.1 - - [26/Mar/2025 13:04:46] "[33mGET /script.java HTTP/1.1[0m" 404 -
+2025-03-26 13:06:13,886 - INFO - Starting fuel system application
+2025-03-26 13:06:13,944 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-26 13:06:13,944 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-26 13:06:13,946 - INFO -  * Restarting with stat
+2025-03-26 13:06:14,584 - INFO - Starting fuel system application
+2025-03-26 13:06:14,636 - WARNING -  * Debugger is active!
+2025-03-26 13:06:14,642 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 13:06:16,083 - INFO - 127.0.0.1 - - [26/Mar/2025 13:06:16] "GET / HTTP/1.1" 200 -
+2025-03-26 13:06:16,114 - INFO - 127.0.0.1 - - [26/Mar/2025 13:06:16] "[33mGET /style.css HTTP/1.1[0m" 404 -
+2025-03-26 13:06:16,117 - INFO - 127.0.0.1 - - [26/Mar/2025 13:06:16] "[33mGET /script.java HTTP/1.1[0m" 404 -
+2025-03-26 13:08:27,953 - INFO - Starting fuel system application
+2025-03-26 13:08:28,057 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-26 13:08:28,058 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-26 13:08:28,062 - INFO -  * Restarting with stat
+2025-03-26 13:08:28,645 - INFO - Starting fuel system application
+2025-03-26 13:08:28,704 - WARNING -  * Debugger is active!
+2025-03-26 13:08:28,707 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 13:08:31,194 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:31] "GET / HTTP/1.1" 200 -
+2025-03-26 13:08:31,300 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:31] "GET /static/style.css HTTP/1.1" 200 -
+2025-03-26 13:08:31,321 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:31] "GET /static/script.java HTTP/1.1" 200 -
+2025-03-26 13:08:34,498 - INFO - New hold created: 100 RUB
+2025-03-26 13:08:34,498 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:34] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 13:08:34,566 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:34] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:34,886 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:34] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:35,193 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:35] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:35,468 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:35] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:35,784 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:35] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:36,124 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:36] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:36,389 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:36] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:36,668 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:36] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:36,985 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:36] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:37,283 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:37] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:37,561 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:37] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:37,879 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:37] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:38,167 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:38] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:38,486 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:38] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:38,777 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:38] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:39,094 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:39] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:39,381 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:39] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:39,710 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:39] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:39,957 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:39] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:40,273 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:40] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:40,567 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:40] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:40,890 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:40] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:41,169 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:41] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:41,446 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:41] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:41,764 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:41] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:42,083 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:42] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:42,375 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:42] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:42,709 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:42] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:42,953 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:42] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:43,283 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:43] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:43,598 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:43] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:43,879 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:43] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:44,222 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:44] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:44,488 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:44] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:44,772 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:44] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:45,084 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:45] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:45,400 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:45] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:45,609 - INFO - OPKCMP: Packet added - Time: 13:08:45.609, Liters: 0.000, Balance: 1000000.00, Final: Yes
+2025-03-26 13:08:45,610 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:45] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 13:08:45,619 - INFO - OPKCMP: Packet added - Time: 13:08:45.618, Liters: 0.000, Balance: 1000000.00, Final: Yes
+2025-03-26 13:08:45,632 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:45] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:51,102 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:51] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 13:08:51,213 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:51] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:51,560 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:51] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:51,856 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:51] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:52,154 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:52] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:52,446 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:52] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 13:08:52,486 - INFO - OPKCMP: Packet added - Time: 13:08:52.486, Liters: 0.000, Balance: 1000000.00, Final: Yes
+2025-03-26 13:08:52,486 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:52] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 13:08:52,492 - INFO - OPKCMP: Packet added - Time: 13:08:52.492, Liters: 0.000, Balance: 1000000.00, Final: Yes
+2025-03-26 13:08:52,496 - INFO - 127.0.0.1 - - [26/Mar/2025 13:08:52] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:35,165 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:35] "GET / HTTP/1.1" 200 -
+2025-03-26 14:13:35,209 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:35] "GET /static/style.css HTTP/1.1" 200 -
+2025-03-26 14:13:35,224 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:35] "GET /static/script.java HTTP/1.1" 200 -
+2025-03-26 14:13:35,254 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:35] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:38,339 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:38] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 14:13:38,447 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:38] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:38,986 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:38] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:39,443 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:39] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:39,938 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:39] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:40,462 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:40] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:40,974 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:40] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:41,414 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:41] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:41,930 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:41] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:42,436 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:42] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:42,930 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:42] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:43,445 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:43] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:43,949 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:43] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:44,446 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:44] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:44,918 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:44] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:45,450 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:45] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:45,938 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:45] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:46,457 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:46] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:46,571 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:46] "GET / HTTP/1.1" 200 -
+2025-03-26 14:13:46,658 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:46] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-26 14:13:46,730 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:46] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 14:13:46,819 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:46] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:47,539 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:47] "GET / HTTP/1.1" 200 -
+2025-03-26 14:13:47,631 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-26 14:13:47,708 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:47] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 14:13:47,782 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:47] "GET / HTTP/1.1" 200 -
+2025-03-26 14:13:47,856 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:47] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:47,929 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:47] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-26 14:13:47,952 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:47] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 14:13:47,954 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:47] "GET / HTTP/1.1" 200 -
+2025-03-26 14:13:48,122 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:48] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:48,154 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:48] "GET / HTTP/1.1" 200 -
+2025-03-26 14:13:48,266 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:48] "GET / HTTP/1.1" 200 -
+2025-03-26 14:13:48,330 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:48] "GET / HTTP/1.1" 200 -
+2025-03-26 14:13:48,446 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:48] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 14:13:48,447 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-26 14:13:48,499 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:48] "GET / HTTP/1.1" 200 -
+2025-03-26 14:13:48,556 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:48] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:48,628 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:48] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 14:13:48,636 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:48] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-26 14:13:48,725 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:48] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:50,473 - INFO - OPKCMP: Packet added - Time: 14:13:50.473, Liters: 0.000, Balance: 1000000.00, Final: Yes
+2025-03-26 14:13:50,474 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:50] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 14:13:50,486 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:50] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:50,486 - INFO - OPKCMP: Packet added - Time: 14:13:50.486, Liters: 0.000, Balance: 1000000.00, Final: Yes
+2025-03-26 14:13:54,299 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:54] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 14:13:54,396 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:54] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:54,951 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:54] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:55,406 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:55] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:55,927 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:55] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:56,414 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:56] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:56,913 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:56] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:57,424 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:57] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 14:13:57,480 - INFO - OPKCMP: Packet added - Time: 14:13:57.480, Liters: 0.000, Balance: 1000000.00, Final: Yes
+2025-03-26 14:13:57,481 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:57] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 14:13:57,485 - INFO - OPKCMP: Packet added - Time: 14:13:57.485, Liters: 0.000, Balance: 1000000.00, Final: Yes
+2025-03-26 14:13:57,489 - INFO - 127.0.0.1 - - [26/Mar/2025 14:13:57] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 17:54:38,761 - INFO - 127.0.0.1 - - [26/Mar/2025 17:54:38] "GET / HTTP/1.1" 200 -
+2025-03-26 17:54:38,799 - INFO - 127.0.0.1 - - [26/Mar/2025 17:54:38] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 17:54:38,799 - INFO - 127.0.0.1 - - [26/Mar/2025 17:54:38] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-26 17:54:38,815 - INFO - 127.0.0.1 - - [26/Mar/2025 17:54:38] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 17:54:40,919 - INFO - 127.0.0.1 - - [26/Mar/2025 17:54:40] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 17:54:41,025 - INFO - 127.0.0.1 - - [26/Mar/2025 17:54:41] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 17:54:41,493 - INFO - 127.0.0.1 - - [26/Mar/2025 17:54:41] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 17:54:42,004 - INFO - 127.0.0.1 - - [26/Mar/2025 17:54:42] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 17:54:42,498 - INFO - 127.0.0.1 - - [26/Mar/2025 17:54:42] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 17:54:42,983 - INFO - 127.0.0.1 - - [26/Mar/2025 17:54:42] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 17:54:43,472 - INFO - OPKCMP: Packet added - Time: 17:54:43.472, Liters: 0.000, Balance: 1000000.00, Final: Yes
+2025-03-26 17:54:43,473 - INFO - 127.0.0.1 - - [26/Mar/2025 17:54:43] "POST /toggle_fueling HTTP/1.1" 200 -
+2025-03-26 17:54:43,475 - INFO - 127.0.0.1 - - [26/Mar/2025 17:54:43] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 17:54:43,485 - INFO - 127.0.0.1 - - [26/Mar/2025 17:54:43] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 17:54:43,526 - INFO - OPKCMP: Packet added - Time: 17:54:43.526, Liters: 0.000, Balance: 1000000.00, Final: Yes
+2025-03-26 17:58:54,580 - INFO - 127.0.0.1 - - [26/Mar/2025 17:58:54] "GET / HTTP/1.1" 200 -
+2025-03-26 17:58:54,633 - INFO - 127.0.0.1 - - [26/Mar/2025 17:58:54] "GET /static/style.css HTTP/1.1" 200 -
+2025-03-26 17:58:54,644 - INFO - 127.0.0.1 - - [26/Mar/2025 17:58:54] "GET /static/script.java HTTP/1.1" 200 -
+2025-03-26 18:26:43,657 - INFO - 127.0.0.1 - - [26/Mar/2025 18:26:43] "GET / HTTP/1.1" 200 -
+2025-03-26 18:26:43,703 - INFO - 127.0.0.1 - - [26/Mar/2025 18:26:43] "GET /static/style.css HTTP/1.1" 200 -
+2025-03-26 18:26:43,738 - INFO - 127.0.0.1 - - [26/Mar/2025 18:26:43] "GET /static/script.java HTTP/1.1" 200 -
+2025-03-26 18:26:57,978 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading
+2025-03-26 18:26:58,119 - INFO -  * Restarting with stat
+2025-03-26 18:26:58,775 - INFO - Starting fuel system application
+2025-03-26 18:26:58,820 - WARNING -  * Debugger is active!
+2025-03-26 18:26:58,831 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 18:26:58,910 - INFO - 127.0.0.1 - - [26/Mar/2025 18:26:58] "GET / HTTP/1.1" 200 -
+2025-03-26 18:26:58,942 - INFO - 127.0.0.1 - - [26/Mar/2025 18:26:58] "GET / HTTP/1.1" 200 -
+2025-03-26 18:26:59,048 - INFO - 127.0.0.1 - - [26/Mar/2025 18:26:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-26 18:26:59,053 - INFO - 127.0.0.1 - - [26/Mar/2025 18:26:59] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 18:26:59,063 - INFO - 127.0.0.1 - - [26/Mar/2025 18:26:59] "GET /static/script.java HTTP/1.1" 200 -
+2025-03-26 18:26:59,064 - INFO - 127.0.0.1 - - [26/Mar/2025 18:26:59] "GET /static/style.css HTTP/1.1" 200 -
+2025-03-26 18:26:59,130 - INFO - 127.0.0.1 - - [26/Mar/2025 18:26:59] "GET / HTTP/1.1" 200 -
+2025-03-26 18:26:59,226 - INFO - 127.0.0.1 - - [26/Mar/2025 18:26:59] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-26 18:26:59,228 - INFO - 127.0.0.1 - - [26/Mar/2025 18:26:59] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 18:35:02,559 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading
+2025-03-26 18:35:02,648 - INFO -  * Restarting with stat
+2025-03-26 18:35:03,265 - INFO - Starting fuel system application
+2025-03-26 18:35:03,316 - WARNING -  * Debugger is active!
+2025-03-26 18:35:03,322 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 18:35:21,474 - INFO - 127.0.0.1 - - [26/Mar/2025 18:35:21] "GET / HTTP/1.1" 200 -
+2025-03-26 18:35:21,551 - INFO - 127.0.0.1 - - [26/Mar/2025 18:35:21] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-26 18:35:21,606 - INFO - 127.0.0.1 - - [26/Mar/2025 18:35:21] "GET /static/script.java HTTP/1.1" 200 -
+2025-03-26 18:35:51,827 - INFO - 127.0.0.1 - - [26/Mar/2025 18:35:51] "GET / HTTP/1.1" 200 -
+2025-03-26 18:35:51,866 - INFO - 127.0.0.1 - - [26/Mar/2025 18:35:51] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-26 18:35:51,867 - INFO - 127.0.0.1 - - [26/Mar/2025 18:35:51] "[36mGET /static/script.java HTTP/1.1[0m" 304 -
+2025-03-26 18:35:56,016 - INFO - Starting fuel system application
+2025-03-26 18:35:56,100 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-26 18:35:56,101 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-26 18:35:56,103 - INFO -  * Restarting with stat
+2025-03-26 18:35:56,989 - INFO - Starting fuel system application
+2025-03-26 18:35:57,060 - WARNING -  * Debugger is active!
+2025-03-26 18:35:57,065 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 18:39:46,935 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:46] "GET / HTTP/1.1" 200 -
+2025-03-26 18:39:47,090 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:47] "GET /static/style.css HTTP/1.1" 200 -
+2025-03-26 18:39:47,094 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:47] "GET /static/script.java HTTP/1.1" 200 -
+2025-03-26 18:39:47,925 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:47] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:48,429 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:48] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:48,935 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:48] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:49,423 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:49] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:49,918 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:49] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:50,422 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:50] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:50,925 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:50] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:51,421 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:51] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:51,920 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:51] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:52,425 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:52] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:52,929 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:52] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:53,561 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:53] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:54,060 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:54] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:54,558 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:54] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:55,071 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:55] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:55,923 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:55] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:56,914 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:56] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:57,915 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:57] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:58,916 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:58] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:39:59,913 - INFO - 127.0.0.1 - - [26/Mar/2025 18:39:59] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:40:00,912 - INFO - 127.0.0.1 - - [26/Mar/2025 18:40:00] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:40:01,913 - INFO - 127.0.0.1 - - [26/Mar/2025 18:40:01] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:40:02,921 - INFO - 127.0.0.1 - - [26/Mar/2025 18:40:02] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:40:03,911 - INFO - 127.0.0.1 - - [26/Mar/2025 18:40:03] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:40:04,917 - INFO - 127.0.0.1 - - [26/Mar/2025 18:40:04] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:40:05,249 - INFO - 127.0.0.1 - - [26/Mar/2025 18:40:05] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:40:05,564 - INFO - 127.0.0.1 - - [26/Mar/2025 18:40:05] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:40:06,064 - INFO - 127.0.0.1 - - [26/Mar/2025 18:40:06] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 18:40:06,559 - INFO - 127.0.0.1 - - [26/Mar/2025 18:40:06] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:23:21,065 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading
+2025-03-26 20:23:21,107 - INFO -  * Restarting with stat
+2025-03-26 20:31:05,391 - INFO - Starting fuel system application
+2025-03-26 20:31:05,450 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-26 20:31:05,451 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-26 20:31:05,451 - INFO -  * Restarting with stat
+2025-03-26 20:31:05,694 - INFO - Starting fuel system application
+2025-03-26 20:31:05,717 - WARNING -  * Debugger is active!
+2025-03-26 20:31:05,719 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 20:31:08,381 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:08] "GET / HTTP/1.1" 200 -
+2025-03-26 20:31:08,435 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:08] "GET /static/script.java HTTP/1.1" 200 -
+2025-03-26 20:31:08,451 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:08] "GET /static/style.css HTTP/1.1" 200 -
+2025-03-26 20:31:11,177 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:11] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:11,688 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:11] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:12,190 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:12] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:12,689 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:12] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:13,182 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:13] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:13,678 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:13] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:14,179 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:14] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:14,678 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:14] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:15,178 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:15] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:15,678 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:15] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:16,177 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:16] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:16,676 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:16] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:17,182 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:17] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:17,650 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:17] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:18,152 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:18] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:18,402 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:18] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:18,717 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:18] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:19,200 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:19] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:19,981 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:19] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:21,175 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:21] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:31:21,676 - INFO - 127.0.0.1 - - [26/Mar/2025 20:31:21] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:05,345 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading
+2025-03-26 20:36:05,442 - INFO -  * Restarting with stat
+2025-03-26 20:36:05,723 - INFO - Starting fuel system application
+2025-03-26 20:36:05,746 - WARNING -  * Debugger is active!
+2025-03-26 20:36:05,748 - INFO -  * Debugger PIN: 161-204-753
+2025-03-26 20:36:08,275 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:08] "GET / HTTP/1.1" 200 -
+2025-03-26 20:36:08,315 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:08] "[36mGET /static/style.css HTTP/1.1[0m" 304 -
+2025-03-26 20:36:08,351 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:08] "GET /static/script.java HTTP/1.1" 200 -
+2025-03-26 20:36:09,369 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:09] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:09,870 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:09] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:10,369 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:10] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:10,870 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:10] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:11,370 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:11] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:11,870 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:11] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:12,385 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:12] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:12,886 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:12] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:13,371 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:13] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:13,885 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:13] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:14,369 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:14] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:14,883 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:14] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:15,867 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:15] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:16,382 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:16] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:16,868 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:16] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:17,369 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:17] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:17,878 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:17] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:18,367 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:18] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:18,867 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:18] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:19,369 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:19] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:36:19,880 - INFO - 127.0.0.1 - - [26/Mar/2025 20:36:19] "GET /get_fuel_data HTTP/1.1" 200 -
+2025-03-26 20:38:32,089 - INFO -  * Detected change in 'C:\\Users\\msof2\\PycharmProjects\\MicroPayments\\fuel_simulation\\app.py', reloading

@@ -1,41 +1,262 @@
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: #f2f2f2;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    background-color: white;
     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-#fuel-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #28a745;
+h1, h2 {
+    color: #2c3e50;
+}
+
+.fuel-btn {
+    background-color: #27ae60;
     color: white;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-#fuel-button:hover {
-    background-color: #218838;
+.fuel-btn.stop {
+    background-color: #e74c3c;
+}
+
+.fuel-btn:hover {
+    opacity: 0.9;
 }
 
 #status {
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.data-section {
+    margin: 25px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.value-group {
+    display: flex;
+    margin: 10px 0;
+}
+
+.value-label {
+    font-weight: bold;
+    width: 100px;
+}
+
+.value {
+    font-family: 'Courier New', monospace;
+}
+
+.table-wrapper {
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.final-row {
+    background-color: #ffecec !important;
+}
+
+.packet-row {
+    background-color: #f0f7ff !important;
+}
+
+.frame-row {
+    background-color: #f9f9f9 !important;
+    font-size: 0.9em;
+}
+
+.frame-time {
+    padding-left: 30px !important;
+    color: #666;
+}
+
+.totals-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.total-item {
+    background-color: #e8f4f8;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.total-label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.flow-visualization {
+    display: flex;
+    gap: 30px;
     margin-top: 20px;
-    font-size: 18px;
-    color: #333;
+}
+
+.flow-meter, .payment-flow {
+    flex: 1;
+}
+
+.flow-indicator, .payment-indicator {
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.flow-indicator::after, .payment-indicator::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: #27ae60;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.payment-indicator::after {
+    background-color: #3498db;
+}
+
+.flow-labels, .payment-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+#current-flow, #current-payment {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.process-explanation {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.process-step {
+    flex: 1;
+    background-color: #f0f7ff;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+}
+
+.process-step h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.process-step p {
+    margin-bottom: 0;
+    color: #666;
+}
+
+.flow-description {
+    color: #666;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.fuel-flow {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.payment-flow {
+    color: #3498db;
+    font-weight: bold;
+}
+
+.process-animation {
+    margin-top: 20px;
+}
+
+.animation-container {
+    position: relative;
+    height: 60px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.fuel-pump {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    left: 10px;
+    top: 20px;
+    animation: fuelProcess 4s linear infinite;
+    animation-play-state: paused;
+}
+
+.animation-labels {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+@keyframes fuelProcess {
+    0% { left: 10px; background-color: #e74c3c; }
+    20% { left: 22%; background-color: #f39c12; }
+    40% { left: 44%; background-color: #f1c40f; }
+    60% { left: 66%; background-color: #2ecc71; }
+    80% { left: 88%; background-color: #3498db; }
+    100% { left: 100%; }
 }

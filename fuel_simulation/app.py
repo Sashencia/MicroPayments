@@ -24,20 +24,28 @@ import grpc
 import threading
 import time
 from datetime import datetime
+import logging
+from logging.handlers import RotatingFileHandler
 
 class BankAccount:
     def __init__(self, user_id, initial_balance):
         self.user_id = user_id
-        self.balance = initial_balance
+        self.balance = round(float(initial_balance), 2)
+        self.lock = threading.Lock()
 
     def get_balance(self):
-        return self.balance
+        with self.lock:
+            return self.balance
 
     def withdraw(self, amount):
-        if amount <= self.balance:
-            self.balance -= amount
-            return True
-        return False
+        with self.lock:
+            amount = round(float(amount), 2)
+            if amount <= 0:
+                return False
+            if self.balance >= amount:
+                self.balance -= amount
+                return True
+            return False
 
 class RecipientAccount:
     def __init__(self, user_id, initial_balance):
@@ -51,6 +59,36 @@ class RecipientAccount:
     def get_balance(self):
         return self.balance
 
+class HoldManager:
+    def __init__(self):
+        self.holds = []
+        self.current_hold = None
+        self.lock = threading.Lock()
+    
+    def create_hold(self, amount, timestamp):
+        with self.lock:
+            self.current_hold = {
+                "amount": amount,
+                "timestamp": timestamp,
+                "remaining": amount,
+                "status": "active"
+            }
+            self.holds.append(self.current_hold)
+            return self.current_hold
+    
+    def update_hold(self, used_amount):
+        with self.lock:
+            if self.current_hold and self.current_hold["status"] == "active":
+                self.current_hold["remaining"] -= used_amount
+                if self.current_hold["remaining"] <= 0:
+                    self.current_hold["status"] = "completed"
+                return True
+            return False
+    
+    def get_holds(self, limit=5):
+        with self.lock:
+            return self.holds[-limit:] if limit else self.holds
+
 class OPKCMP:
     def __init__(self):
         self.buffer = []
@@ -59,7 +97,12 @@ class OPKCMP:
 
     def add_packet(self, packet):
         self.buffer.append(packet)
-        print(f"OPKCMP: Packet added to buffer. Time: {packet['time']}, Liters: {packet['liters']}, Balance: {packet['balance']}")
+        logging.info(
+            f"OPKCMP: Packet added - Time: {packet['time']}, "
+            f"Liters: {packet['liters']:.3f}, "
+            f"Balance: {packet['balance']:.2f}, "
+            f"Final: {'Yes' if packet.get('is_final', False) else 'No'}"
+        )
 
     def process_final_packet(self, total_cost):
         if self.buffer:
@@ -95,15 +138,35 @@ class FuelPumpSimulator:
             return fuel_consumed
         return 0
 
+def validate_payment_data(fuel_price, liters, balance):
+    if fuel_price <= 0:
+        raise ValueError("Fuel price must be positive")
+    if liters < 0:
+        raise ValueError("Liters cannot be negative")
+    if balance < 0:
+        raise ValueError("Balance cannot be negative")
+    return True
+
 def process_fuel_payment(stub, fuel_price_per_liter, liters, is_finished=False):
-    start_time = time.time()
-    response = stub.ProcessFuelPayment(payment_pb2.FuelPaymentRequest(
-        fuel_price_per_liter=fuel_price_per_liter,
-        liters=liters,
-        is_finished=is_finished
-    ))
-    end_time = time.time()
-    return response, end_time - start_time
+    try:
+        validate_payment_data(fuel_price_per_liter, liters, bank_account.get_balance())
+        
+        start_time = time.time()
+        response = stub.ProcessFuelPayment(payment_pb2.FuelPaymentRequest(
+            fuel_price_per_liter=fuel_price_per_liter,
+            liters=liters,
+            is_finished=is_finished
+        ))
+        end_time = time.time()
+        return response, end_time - start_time
+    except ValueError as e:
+        print(f"Validation error: {str(e)}")
+        stop_fueling.set()
+        return payment_pb2.FuelPaymentResponse(success=False), 0
+    except grpc.RpcError as e:
+        print(f"GRPC error: {e.code()}: {e.details()}")
+        stop_fueling.set()
+        return payment_pb2.FuelPaymentResponse(success=False), 0
 
 app = Flask(__name__)
 
@@ -121,86 +184,133 @@ recipient_account = RecipientAccount(user_id="recipient1", initial_balance=0.0)
 
 def connect_to_grpc_server():
     global stub
-    channel = grpc.insecure_channel('localhost:50051')
-    stub = payment_pb2_grpc.PaymentServiceStub(channel)
+    try:
+        channel = grpc.insecure_channel('localhost:50051')
+        # Проверяем соединение
+        grpc.channel_ready_future(channel).result(timeout=5)
+        stub = payment_pb2_grpc.PaymentServiceStub(channel)
+        print("GRPC connection established successfully")
+    except grpc.RpcError as e:
+        print(f"GRPC connection failed: {e.code()}: {e.details()}")
+        stub = None
+    except Exception as e:
+        print(f"GRPC connection error: {str(e)}")
+        stub = None
+
+def finalize_fueling():
+    global total_liters, total_cost, packet_log, opkcmp, recipient_account
+    
+    # Фиксация финального состояния
+    completion_packet = {
+        "time": datetime.now().strftime("%H:%M:%S.%f")[:-3],
+        "liters": 0,
+        "balance": round(bank_account.get_balance(), 2),
+        "is_final": True,
+        "is_completion": True
+    }
+    
+    packet_log.append(completion_packet)
+    opkcmp.add_packet(completion_packet)
+    
+    # Обработка финального платежа
+    opkcmp.process_final_packet(round(total_cost, 2))
+    opkcmp.send_final_balance_to_recipient(recipient_account)
+    
+    # Финансовая финализация
+    if stub:
+        process_fuel_payment(stub, fuel_price_per_liter, 0, is_finished=True)
+
+# Глобальные переменные
+hold_manager = HoldManager()
 
 def fueling_process(stub, fuel_price_per_liter, fuel_pump, bank_account):
     global total_liters, total_cost, stop_fueling, packet_log, real_time_data, opkcmp, recipient_account
-    buffer_liters = 0
-
+    
+    # Константы
+    FRAME_INTERVAL = 0.1  # интервал между кадрами (сек)
+    TARGET_PACKET_SIZE = 0.3  # размер пакета для отправки (литры)
+    
+    frame_buffer = []  # буфер для хранения кадров
+    buffer_liters = 0  # накопленные литры в буфере
+    
     while not stop_fueling.is_set():
-        time_interval = 0.1
-        fuel_consumed = fuel_pump.get_fuel_consumed(0.01)
-        buffer_liters += fuel_consumed
-        total_liters += fuel_consumed
-
-        cost = fuel_price_per_liter * fuel_consumed
-        if bank_account.get_balance() >= cost:
-            bank_account.withdraw(cost)
+        try:
+            # Получаем текущее количество топлива
+            fuel_consumed = fuel_pump.get_fuel_consumed(FRAME_INTERVAL)
+            if fuel_consumed <= 0:
+                time.sleep(FRAME_INTERVAL)
+                continue
+            
+            # Обновляем баланс
+            cost = fuel_price_per_liter * fuel_consumed
+            if not bank_account.withdraw(cost):
+                stop_fueling.set()
+                break
+            
+            # Сохраняем кадр
+            current_time = datetime.now().strftime("%H:%M:%S.%f")[:-3]
+            frame = {
+                "time": current_time,
+                "liters": fuel_consumed,
+                "balance": bank_account.get_balance()
+            }
+            frame_buffer.append(frame)
+            
+            # Обновляем общие показатели
+            buffer_liters += fuel_consumed
+            total_liters += fuel_consumed
             total_cost += cost
-        else:
-            print("Insufficient funds. Stopping fueling...")
+            
+            # Обновляем данные реального времени
+            real_time_data = {
+                "liters": total_liters,
+                "balance": bank_account.get_balance()
+            }
+            
+            # Если накопили достаточно для пакета
+            if buffer_liters >= TARGET_PACKET_SIZE:
+                packet = {
+                    "time": current_time,
+                    "liters": buffer_liters,
+                    "balance": bank_account.get_balance(),
+                    "is_final": False,
+                    "frames": frame_buffer.copy()  # сохраняем все кадры
+                }
+                
+                packet_log.append(packet)
+                opkcmp.add_packet(packet)
+                
+                # Отправка платежа
+                response, _ = process_fuel_payment(stub, fuel_price_per_liter, buffer_liters)
+                if not response.success:
+                    stop_fueling.set()
+                    break
+                
+                # Очищаем буферы
+                buffer_liters = 0
+                frame_buffer = []
+            
+            time.sleep(FRAME_INTERVAL)
+            
+        except Exception as e:
+            logging.error(f"Fueling error: {str(e)}")
             stop_fueling.set()
             break
 
-        real_time_data["liters"] = total_liters
-        real_time_data["balance"] = bank_account.get_balance()
-
-        if buffer_liters >= 0.3:
-            liters_to_send = 0.3
-            current_time = datetime.now().strftime("%H:%M:%S.%f")[:-3]
-            packet = {
-                "time": current_time,
-                "liters": liters_to_send,
-                "balance": bank_account.get_balance(),
-                "is_final": False
-            }
-            packet_log.append(packet)
-            opkcmp.add_packet(packet)
-
-            response, _ = process_fuel_payment(stub, fuel_price_per_liter, liters_to_send)
-            if not response.success:
-                print("Fuel payment failed")
-                break
-
-            buffer_liters -= liters_to_send
-
-        time.sleep(time_interval)
-
-    # Process remaining fuel and final packet
+    # Обработка оставшегося топлива после остановки
     if buffer_liters > 0:
-        liters_to_send = buffer_liters
-        current_time = datetime.now().strftime("%H:%M:%S.%f")[:-3]
         final_packet = {
-            "time": current_time,
-            "liters": liters_to_send,
+            "time": datetime.now().strftime("%H:%M:%S.%f")[:-3],
+            "liters": buffer_liters,
             "balance": bank_account.get_balance(),
-            "is_final": True
+            "is_final": True,
+            "frames": frame_buffer
         }
         packet_log.append(final_packet)
         opkcmp.add_packet(final_packet)
 
-    # Add completion packet
-    current_time = datetime.now().strftime("%H:%M:%S.%f")[:-3]
-    completion_packet = {
-        "time": current_time,
-        "liters": 0,
-        "balance": bank_account.get_balance(),
-        "is_final": True,
-        "is_completion": True  # Special flag for completion packet
-    }
-    packet_log.append(completion_packet)
-    opkcmp.add_packet(completion_packet)
-
-    # Process final transaction
-    opkcmp.process_final_packet(total_cost)  # Pass total_cost instead of balance
-    opkcmp.send_final_balance_to_recipient(recipient_account)
-
-    response, transfer_time = process_fuel_payment(stub, fuel_price_per_liter, 0, is_finished=True)
-    if response.success:
-        print(f"Fueling finished successfully. Transfer time: {transfer_time:.4f} seconds.")
-    else:
-        print("Failed to finish fueling.")
+    # Финализация
+    finalize_fueling()
 
 @app.route('/')
 def index():
@@ -244,10 +354,42 @@ def get_fuel_data():
         "real_time_data": real_time_data,
         "opkcmp_log": opkcmp.buffer[-10:],
         "recipient_balance": recipient_account.get_balance(),
-        "fueling_active": fueling_active  # Add fueling status to response
+        "fueling_active": fueling_active,  # Add fueling status to response
+        "holds": hold_manager.get_holds(5),
+        "current_hold": hold_manager.current_hold
     })
 
+@app.route('/add_fuel', methods=['POST'])
+def add_fuel():
+    data = request.json
+    print(f"Получен пакет: {data['liters']} л, баланс: {data['balance']} руб")
+    return jsonify({"status": "ok"})
+
+def setup_logging():
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+    
+    # Формат логов
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    
+    # Логи в файл с ротацией
+    file_handler = RotatingFileHandler(
+        'fuel_system.log', 
+        maxBytes=1024*1024, 
+        backupCount=5
+    )
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+    
+    # Логи в консоль
+    console_handler = logging.StreamHandler()
+    console_handler.setFormatter(formatter)
+    logger.addHandler(console_handler)
+
+
 if __name__ == '__main__':
+    setup_logging()
+    logging.info("Starting fuel system application")
     connect_to_grpc_server()
     fuel_pump = FuelPumpSimulator(flow_rate_liters_per_second=6)
     bank_account = BankAccount(user_id="user1", initial_balance=1000000.0)
