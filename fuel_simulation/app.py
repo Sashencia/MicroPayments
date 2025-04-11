@@ -228,7 +228,7 @@ def finalize_fueling():
 def fueling_process():
     global total_liters, total_cost, stop_fueling, packet_log, real_time_data
     
-    FRAME_INTERVAL = 0.1
+    FRAME_INTERVAL = 0.001
     TARGET_PACKET_SIZE = 0.3
     frame_buffer = []
     buffer_liters = 0
@@ -282,7 +282,7 @@ def fueling_process():
                 buffer_liters = 0
                 frame_buffer = []
             
-            time.sleep(FRAME_INTERVAL)
+            time.sleep(0.01)
             
         except Exception as e:
             logging.error(f"Fueling error: {str(e)}")
@@ -329,6 +329,9 @@ def toggle_fueling():
 def get_fuel_data():
     holds_info = []
     for hold in hold_manager.get_holds(5):
+        # Автоматически помечаем холды с остатком 0 как completed
+        if hold['remaining'] <= 0 and hold['status'] != 'completed':
+            hold['status'] = 'completed'
         holds_info.append({
             "id": hold["id"],
             "amount": hold["amount"],

@@ -13,27 +13,31 @@
         <button id="fuel-button" class="fuel-btn">Start Fueling</button>
         <div id="status">Ready to start fueling</div>
         
-        <div class="flow-visualization">
+        <!-- <div class="flow-visualization">
             <div class="flow-meter">
-                <h3>Fuel Flow</h3>
-                <div class="flow-indicator" id="flow-indicator"></div>
+                <h3 class="flow-title">Fuel Flow</h3>
+                <div class="current-value" id="current-flow">0 L/s</div>
+                <div class="flow-indicator">
+                    <div class="progress" id="flow-progress"></div>
+                </div>
                 <div class="flow-labels">
                     <span>0 L/s</span>
-                    <span id="current-flow">0 L/s</span>
-                    <span>6 L/s</span>
+                    <span>6 L/s (max)</span>
                 </div>
             </div>
+            
             <div class="payment-flow">
-                <h3>Payment Flow</h3>
-                <div class="payment-indicator" id="payment-indicator"></div>
+                <h3 class="flow-title">Payment Flow</h3>
+                <div class="current-value" id="current-payment">0 RUB/s</div>
+                <div class="payment-indicator">
+                    <div class="progress" id="payment-progress"></div>
+                </div>
                 <div class="flow-labels">
                     <span>0 RUB/s</span>
-                    <span id="current-payment">0 RUB/s</span>
-                    <span>326.22 RUB/s</span>
+                    <span>326.22 RUB/s (max)</span>
                 </div>
             </div>
-        </div>
-
+        </div> -->
         <div class="data-section">
             <h2>Real-time Data</h2>
             <div class="value-group">
@@ -105,11 +109,11 @@
             </div>
         </div>
 
-        <div class="process-animation">
+        <!-- <div class="process-animation">
             <div class="animation-container">
                 <div id="fueling-animation"></div>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <script src="/static/script.java"></script>

@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 updatePacketTable(data.packet_log);
                 updateOPKCMPTable(data.opkcmp_log);
                 updateFlowVisualization(data);
-                animateFuelingProcess(data);
+                //animateFuelingProcess(data);
             })
             .catch(error => console.error('Error updating fuel data:', error));
     }
@@ -77,26 +77,24 @@ document.addEventListener('DOMContentLoaded', function() {
         holds.forEach(hold => {
             const row = document.createElement('tr');
             
-            // Определяем класс строки в зависимости от состояния холда
-            let rowClass = '';
-            if (hold.status === 'completed') {
-                rowClass = 'hold-completed';
-            } else if (hold.used / hold.amount > 0.66) {
-                rowClass = 'hold-used-2-3';
-            } else {
-                rowClass = 'hold-active';
-            }
+            // Гарантируем, что холды с remaining <= 0 показываются как completed
+            const isCompleted = hold.status === 'completed' || hold.remaining <= 0;
+            const displayStatus = isCompleted ? 'COMPLETED' : 'ACTIVE';
             
-            row.className = rowClass;
+            // Классы для разных состояний
+            row.className = isCompleted ? 'hold-completed' : 
+                          (hold.used / hold.amount > 0.66 ? 'hold-used-2-3' : 'hold-active');
+            
             row.innerHTML = `
                 <td>${hold.id}</td>
                 <td>${hold.timestamp}</td>
                 <td>${hold.amount.toFixed(2)} RUB</td>
                 <td>${hold.used.toFixed(2)} RUB</td>
                 <td>${hold.remaining.toFixed(2)} RUB</td>
-                <td>${hold.status.toUpperCase()}</td>
+                <td class="hold-status">${displayStatus}</td>
                 <td>${hold.transactions.length}</td>
             `;
+            
             tbody.appendChild(row);
         });
     }
@@ -135,28 +133,47 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function updateFlowVisualization(data) {
-        // Расчет скорости потока топлива
-        const flowRate = data.real_time_data.liters / (data.packet_log.length * 0.1) || 0;
-        const flowPercentage = Math.min(100, (flowRate / 6) * 100);
+    // function updateFlowVisualization(data) {
+    //     // Рассчитываем текущую скорость потока
+    //     const flowRate = data.real_time_data.liters / (data.packet_log.length * 0.1) || 0;
+    //     const flowPercentage = Math.min(100, (flowRate / 6) * 100);
         
-        document.getElementById('flow-indicator').style.width = `${flowPercentage}%`;
-        document.getElementById('current-flow').textContent = `${flowRate.toFixed(3)} L/s`;
+    //     // Обновляем индикатор топлива
+    //     const flowProgress = document.getElementById('flow-progress');
+    //     flowProgress.style.width = `${flowPercentage}%`;
+    //     document.getElementById('current-flow').textContent = `${flowRate.toFixed(3)} L/s`;
         
-        // Расчет скорости оплаты
-        const paymentRate = (data.total_cost / (data.packet_log.length * 0.1)) || 0;
-        const paymentPercentage = Math.min(100, (paymentRate / 326.22) * 100);
+    //     // Рассчитываем текущую скорость оплаты
+    //     const paymentRate = (data.total_cost / (data.packet_log.length * 0.1)) || 0;
+    //     const paymentPercentage = Math.min(100, (paymentRate / 326.22) * 100);
         
-        document.getElementById('payment-indicator').style.width = `${paymentPercentage}%`;
-        document.getElementById('current-payment').textContent = `${paymentRate.toFixed(2)} RUB/s`;
-    }
-
-    function animateFuelingProcess(data) {
-        const animation = document.getElementById('fueling-animation');
-        if (data.fueling_active) {
-            animation.style.animationPlayState = 'running';
-        } else {
-            animation.style.animationPlayState = 'paused';
-        }
-    }
+    //     // Обновляем индикатор платежей
+    //     const paymentProgress = document.getElementById('payment-progress');
+    //     paymentProgress.style.width = `${paymentPercentage}%`;
+    //     document.getElementById('current-payment').textContent = `${paymentRate.toFixed(2)} RUB/s`;
+        
+    //     // Изменяем цвет при высоких скоростях
+    //     const flowMeter = document.querySelector('.flow-meter');
+    //     const paymentFlow = document.querySelector('.payment-flow');
+        
+    //     if (flowRate > 4.5) {
+    //         flowMeter.classList.add('high-flow');
+    //     } else {
+    //         flowMeter.classList.remove('high-flow');
+    //     }
+        
+    //     if (paymentRate > 250) {
+    //         paymentFlow.classList.add('high-payment');
+    //     } else {
+    //         paymentFlow.classList.remove('high-payment');
+    //     }
+    // }
+    // function animateFuelingProcess(data) {
+    //     const animation = document.getElementById('fueling-animation');
+    //     if (data.fueling_active) {
+    //         animation.style.animationPlayState = 'running';
+    //     } else {
+    //         animation.style.animationPlayState = 'paused';
+    //     }
+    // }
 });
