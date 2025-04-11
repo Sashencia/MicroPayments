@@ -1,57 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Fuel Station</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Pump Simulator</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Fuel Station</h1>
+        <h1>Fuel Pump Simulator</h1>
+        
         <button id="fuel-button" class="fuel-btn">Start Fueling</button>
-        <div id="status">Status: Ready</div>
+        <div id="status">Ready to start fueling</div>
         
-        <div class="data-section">
-            <h2>Real-Time Data</h2>
-            <div class="value-group">
-                <span class="value-label">Liters:</span>
-                <span id="real-time-liters" class="value">0.000</span>
+        <div class="flow-visualization">
+            <div class="flow-meter">
+                <h3>Fuel Flow</h3>
+                <div class="flow-indicator" id="flow-indicator"></div>
+                <div class="flow-labels">
+                    <span>0 L/s</span>
+                    <span id="current-flow">0 L/s</span>
+                    <span>6 L/s</span>
+                </div>
             </div>
-            <div class="value-group">
-                <span class="value-label">Balance:</span>
-                <span id="real-time-balance" class="value">0.00 RUB</span>
-            </div>
-        </div>
-        
-        <div class="data-section">
-            <h2>Fueling Process Animation</h2>
-            <div class="process-animation">
-                <div class="animation-container">
-                    <div class="fuel-pump" id="fueling-animation"></div>
-                    <div class="animation-labels">
-                        <span>Pump</span>
-                        <span>Frames</span>
-                        <span>Packets</span>
-                        <span>OPKCMP</span>
-                        <span>Recipient</span>
-                    </div>
+            <div class="payment-flow">
+                <h3>Payment Flow</h3>
+                <div class="payment-indicator" id="payment-indicator"></div>
+                <div class="flow-labels">
+                    <span>0 RUB/s</span>
+                    <span id="current-payment">0 RUB/s</span>
+                    <span>326.22 RUB/s</span>
                 </div>
             </div>
         </div>
 
         <div class="data-section">
-            <h2>Fuel Transaction Process</h2>
-            <div class="process-explanation">
-                <div class="process-step">
-                    <h3>1. Frames (0.3L each)</h3>
-                    <p>Every 100ms the system records a "frame" with ~0.3L fuel dispensed</p>
+            <h2>Real-time Data</h2>
+            <div class="value-group">
+                <span class="value-label">Liters:</span>
+                <span class="value" id="real-time-liters">0.000 L</span>
+            </div>
+            <div class="value-group">
+                <span class="value-label">Balance:</span>
+                <span class="value" id="real-time-balance">0.00 RUB</span>
+            </div>
+        </div>
+
+        <div class="data-section">
+            <h2>Totals</h2>
+            <div class="totals-grid">
+                <div class="total-item">
+                    <span class="total-label">Total Liters:</span>
+                    <span class="value" id="total-liters">0.000 L</span>
                 </div>
-                <div class="process-step">
-                    <h3>2. Packets (3-5 frames)</h3>
-                    <p>When accumulated 0.9-1.5L (3-5 frames), system creates a payment packet</p>
+                <div class="total-item">
+                    <span class="total-label">Total Cost:</span>
+                    <span class="value" id="total-cost">0.00 RUB</span>
                 </div>
-                <div class="process-step">
-                    <h3>3. OPKCMP Buffer</h3>
-                    <p>Packets are temporarily stored here before final transfer to recipient</p>
+                <div class="total-item">
+                    <span class="total-label">Account Balance:</span>
+                    <span class="value" id="balance">0.00 RUB</span>
+                </div>
+                <div class="total-item">
+                    <span class="total-label">Recipient Balance:</span>
+                    <span class="value" id="recipient-balance">0.00 RUB</span>
                 </div>
             </div>
         </div>
@@ -62,21 +74,22 @@
                 <table id="holds-log">
                     <thead>
                         <tr>
+                            <th>ID</th>
                             <th>Time</th>
                             <th>Amount</th>
+                            <th>Used</th>
                             <th>Remaining</th>
                             <th>Status</th>
+                            <th>Tx Count</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr><td colspan="4">No data available</td></tr>
-                    </tbody>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
-        
+
         <div class="data-section">
-            <h2>Packet Sending Log</h2>
+            <h2>Packet Log</h2>
             <div class="table-wrapper">
                 <table id="packet-log">
                     <thead>
@@ -84,84 +97,20 @@
                             <th>Time</th>
                             <th>Liters</th>
                             <th>Balance</th>
-                            <th>Status</th>
+                            <th>Type</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr><td colspan="4">No data available</td></tr>
-                    </tbody>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
-        
-        <div class="data-section">
-            <h2>OPKCMP Buffer</h2>
-            <div class="table-wrapper">
-                <table id="opkcmp-log">
-                    <thead>
-                        <tr>
-                            <th>Time</th>
-                            <th>Liters</th>
-                            <th>Balance</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td colspan="4">No data available</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        
-        <div class="data-section">
-            <h2>Totals</h2>
-            <div class="totals-grid">
-                <div class="total-item">
-                    <span class="total-label">Total Fueled:</span>
-                    <span id="total-liters" class="value">0.000 liters</span>
-                </div>
-                <div class="total-item">
-                    <span class="total-label">Total Cost:</span>
-                    <span id="total-cost" class="value">0.00 RUB</span>
-                </div>
-                <div class="total-item">
-                    <span class="total-label">Your Balance:</span>
-                    <span id="balance" class="value">0.00 RUB</span>
-                </div>
-                <div class="total-item">
-                    <span class="total-label">Recipient Balance:</span>
-                    <span id="recipient-balance" class="value">0.00 RUB</span>
-                </div>
-            </div>
-        </div>
-    </div>
 
-<!-- Добавьте этот раздел после существующих таблиц -->
-<div class="data-section">
-    <h2>Real-Time Flow Visualization</h2>
-    <p class="flow-description">
-        <span class="fuel-flow">Green bar</span> shows current fuel flow rate (0-6 L/s) | 
-        <span class="payment-flow">Blue bar</span> shows payment processing speed
-    </p>
-    <div class="flow-visualization">
-        <div class="flow-meter">
-            <div class="flow-indicator" id="flow-indicator"></div>
-            <div class="flow-labels">
-                <span>0 L</span>
-                <span id="current-flow">0.000 L/s</span>
-                <span>6 L</span>
-            </div>
-        </div>
-        <div class="payment-flow">
-            <div class="payment-indicator" id="payment-indicator"></div>
-            <div class="payment-labels">
-                <span>0 RUB</span>
-                <span id="current-payment">0.00 RUB/s</span>
-                <span>326.22 RUB</span>
+        <div class="process-animation">
+            <div class="animation-container">
+                <div id="fueling-animation"></div>
             </div>
         </div>
     </div>
-</div>
 
     <script src="/static/script.java"></script>
 </body>

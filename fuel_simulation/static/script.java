@@ -3,90 +3,56 @@ document.addEventListener('DOMContentLoaded', function() {
     const statusEl = document.getElementById('status');
     let isFueling = false;
     let updateInterval;
+
+    // Инициализация UI
+    updateFuelData();
     
-    // Обработчик кнопки заправки
-    fuelBtn.addEventListener('click', function() {
-        if (isFueling) {
-            stopFueling();
-        } else {
-            startFueling();
+    fuelBtn.addEventListener('click', toggleFueling);
+
+    async function toggleFueling() {
+        try {
+            const response = await fetch('/toggle_fueling', { 
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const data = await response.json();
+            
+            if (data.status === 'started') {
+                isFueling = true;
+                fuelBtn.textContent = 'Stop Fueling';
+                fuelBtn.classList.add('stop');
+                statusEl.textContent = 'Fueling in progress...';
+                statusEl.dataset.status = 'active';
+                updateInterval = setInterval(updateFuelData, 100);
+            } else if (data.status === 'stopped') {
+                isFueling = false;
+                fuelBtn.textContent = 'Start Fueling';
+                fuelBtn.classList.remove('stop');
+                statusEl.textContent = 'Ready to start fueling';
+                statusEl.dataset.status = 'inactive';
+                clearInterval(updateInterval);
+                updateFuelData();
+            }
+        } catch (error) {
+            console.error('Error toggling fueling:', error);
+            alert('Failed to toggle fueling state');
         }
-    });
-
-    function startFueling() {
-        fetch('/toggle_fueling', { method: 'POST' })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'started') {
-                    isFueling = true;
-                    fuelBtn.textContent = 'Stop Fueling';
-                    fuelBtn.classList.add('stop');
-                    statusEl.textContent = 'Fueling in progress...';
-                    
-                    // Запускаем обновление данных с более частым интервалом
-                    updateFuelData();
-                    updateInterval = setInterval(updateFuelData, 100); // 100ms для плавности
-                }
-            });
-    }
-
-    function stopFueling() {
-        fetch('/toggle_fueling', { method: 'POST' })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'stopped') {
-                    isFueling = false;
-                    fuelBtn.textContent = 'Start Fueling';
-                    fuelBtn.classList.remove('stop');
-                    statusEl.textContent = 'Fueling stopped';
-                    clearInterval(updateInterval);
-                }
-            });
     }
 
     function updateFuelData() {
         fetch('/get_fuel_data')
             .then(response => response.json())
             .then(data => {
-                // Обновляем цифровые значения
                 updateRealTimeValues(data);
-                
-                // Обновляем таблицы с пояснениями
-                updateHoldTable(data);
-                updatePacketTable(data);
-                updateOPKCMPTable(data);
-                
-                // Обновляем визуализацию потока с реальными значениями
+                updateHoldTable(data.holds);
+                updatePacketTable(data.packet_log);
+                updateOPKCMPTable(data.opkcmp_log);
                 updateFlowVisualization(data);
-                
-                // Добавляем анимацию процесса
                 animateFuelingProcess(data);
-            });
-    }
-    
-    function animateFuelingProcess(data) {
-        const fuelingIndicator = document.getElementById('fueling-animation');
-        if (data.fueling_active && fuelingIndicator) {
-            fuelingIndicator.style.animationPlayState = 'running';
-        } else if (fuelingIndicator) {
-            fuelingIndicator.style.animationPlayState = 'paused';
-        }
-    }
-    
-    function updateFlowVisualization(data) {
-        // Рассчитываем текущую скорость потока (литры в секунду)
-        const flowRate = data.real_time_data.liters / (data.packet_log.length * 0.1); // примерный расчет
-        const flowPercentage = Math.min(100, (flowRate / 6) * 100); // 6 л/с - максимальная скорость
-        
-        document.getElementById('flow-indicator').style.width = `${flowPercentage}%`;
-        document.getElementById('current-flow').textContent = `${flowRate.toFixed(3)} L/s`;
-        
-        // Рассчитываем текущую скорость оплаты (рубли в секунду)
-        const paymentRate = (data.total_cost / (data.packet_log.length * 0.1)) || 0;
-        const paymentPercentage = Math.min(100, (paymentRate / 326.22) * 100); // 54.37 * 6 = 326.22
-        
-        document.getElementById('payment-indicator').style.width = `${paymentPercentage}%`;
-        document.getElementById('current-payment').textContent = `${paymentRate.toFixed(2)} RUB/s`;
+            })
+            .catch(error => console.error('Error updating fuel data:', error));
     }
 
     function updateRealTimeValues(data) {
@@ -94,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
             data.real_time_data.liters.toFixed(3) + ' L';
         document.getElementById('real-time-balance').textContent = 
             data.real_time_data.balance.toFixed(2) + ' RUB';
-        
         document.getElementById('total-liters').textContent = 
             data.total_liters.toFixed(3) + ' L';
         document.getElementById('total-cost').textContent = 
@@ -105,111 +70,93 @@ document.addEventListener('DOMContentLoaded', function() {
             data.recipient_balance.toFixed(2) + ' RUB';
     }
 
-    function updateHoldTable(data) {
-        const table = document.getElementById('holds-log');
-        const tbody = table.querySelector('tbody');
+    function updateHoldTable(holds) {
+        const tbody = document.querySelector('#holds-log tbody');
         tbody.innerHTML = '';
         
-        // Добавляем текущий холд (если есть)
-        if (data.current_hold) {
+        holds.forEach(hold => {
             const row = document.createElement('tr');
-            row.className = 'current-hold';
+            
+            // Определяем класс строки в зависимости от состояния холда
+            let rowClass = '';
+            if (hold.status === 'completed') {
+                rowClass = 'hold-completed';
+            } else if (hold.used / hold.amount > 0.66) {
+                rowClass = 'hold-used-2-3';
+            } else {
+                rowClass = 'hold-active';
+            }
+            
+            row.className = rowClass;
             row.innerHTML = `
-                <td>${new Date().toLocaleTimeString()}</td>
-                <td>${data.current_hold.amount.toFixed(2)} RUB</td>
-                <td>${data.current_hold.remaining.toFixed(2)} RUB</td>
-                <td>${data.current_hold.status.toUpperCase()}</td>
-            `;
-            tbody.appendChild(row);
-        }
-        
-        // Добавляем историю холдов (5 последних)
-        const holdsToShow = (data.holds || []).slice(-5).reverse();
-        
-        holdsToShow.forEach(hold => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${new Date(hold.timestamp).toLocaleTimeString()}</td>
+                <td>${hold.id}</td>
+                <td>${hold.timestamp}</td>
                 <td>${hold.amount.toFixed(2)} RUB</td>
+                <td>${hold.used.toFixed(2)} RUB</td>
                 <td>${hold.remaining.toFixed(2)} RUB</td>
                 <td>${hold.status.toUpperCase()}</td>
+                <td>${hold.transactions.length}</td>
             `;
             tbody.appendChild(row);
         });
-        
-        if (tbody.children.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="4">No active holds</td></tr>';
-        }
     }
 
-    function updatePacketTable(data) {
-        const table = document.getElementById('packet-log');
-        const tbody = table.querySelector('tbody');
+    function updatePacketTable(packets) {
+        const tbody = document.querySelector('#packet-log tbody');
         tbody.innerHTML = '';
         
-        // Показываем только последние 10 пакетов для производительности
-        const packetsToShow = data.packet_log.slice(-10).reverse();
-        
-        packetsToShow.forEach(packet => {
-            // Основная строка пакета
-            const packetRow = document.createElement('tr');
-            packetRow.className = packet.is_final ? 'final-packet' : 'packet';
-            packetRow.innerHTML = `
-                <td>${packet.time || new Date().toLocaleTimeString()}</td>
+        packets.forEach(packet => {
+            const row = document.createElement('tr');
+            row.className = packet.is_final ? 'final-frame' : 'packet-frame';
+            row.innerHTML = `
+                <td>${packet.time}</td>
                 <td>${packet.liters.toFixed(3)} L</td>
                 <td>${packet.balance.toFixed(2)} RUB</td>
                 <td>${packet.is_final ? 'FINAL' : 'PACKET'}</td>
             `;
-            tbody.appendChild(packetRow);
-            
-            // Подробные кадры (если есть)
-            if (packet.frames && packet.frames.length > 0) {
-                packet.frames.forEach(frame => {
-                    const frameRow = document.createElement('tr');
-                    frameRow.className = 'frame-detail';
-                    frameRow.innerHTML = `
-                        <td class="frame-time">↳ ${frame.time || '--:--:--'}</td>
-                        <td>${frame.liters.toFixed(3)} L</td>
-                        <td>${frame.balance.toFixed(2)} RUB</td>
-                        <td>FRAME</td>
-                    `;
-                    tbody.appendChild(frameRow);
-                });
-            }
+            tbody.appendChild(row);
         });
-        
-        if (tbody.children.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="4">No packets data</td></tr>';
-        }
     }
 
-    function updateOPKCMPTable(data) {
-        const table = document.getElementById('opkcmp-log');
-        const tbody = table.querySelector('tbody');
+    function updateOPKCMPTable(opkcmpLog) {
+        const tbody = document.querySelector('#opkcmp-log tbody');
         tbody.innerHTML = '';
         
-        // Показываем только последние 10 записей
-        const opkcmpToShow = data.opkcmp_log.slice(-10).reverse();
-        
-        opkcmpToShow.forEach(item => {
+        opkcmpLog.forEach(item => {
             const row = document.createElement('tr');
-            row.className = item.is_final ? 'final-opkcmp' : 'opkcmp';
+            row.className = item.is_final ? 'final-opkcmp' : 'opkcmp-buffer';
             row.innerHTML = `
-                <td>${item.time || new Date().toLocaleTimeString()}</td>
+                <td>${item.time}</td>
                 <td>${item.liters.toFixed(3)} L</td>
                 <td>${item.balance.toFixed(2)} RUB</td>
                 <td>${item.is_final ? 'FINAL' : 'BUFFER'}</td>
             `;
             tbody.appendChild(row);
         });
-        
-        if (tbody.children.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="4">No OPKCMP data</td></tr>';
-        }
     }
 
-    function updateRealTimeChart(data) {
-        // Здесь можно добавить код для обновления графика в реальном времени
-        // Например, с использованием Chart.js или аналогичной библиотеки
+    function updateFlowVisualization(data) {
+        // Расчет скорости потока топлива
+        const flowRate = data.real_time_data.liters / (data.packet_log.length * 0.1) || 0;
+        const flowPercentage = Math.min(100, (flowRate / 6) * 100);
+        
+        document.getElementById('flow-indicator').style.width = `${flowPercentage}%`;
+        document.getElementById('current-flow').textContent = `${flowRate.toFixed(3)} L/s`;
+        
+        // Расчет скорости оплаты
+        const paymentRate = (data.total_cost / (data.packet_log.length * 0.1)) || 0;
+        const paymentPercentage = Math.min(100, (paymentRate / 326.22) * 100);
+        
+        document.getElementById('payment-indicator').style.width = `${paymentPercentage}%`;
+        document.getElementById('current-payment').textContent = `${paymentRate.toFixed(2)} RUB/s`;
+    }
+
+    function animateFuelingProcess(data) {
+        const animation = document.getElementById('fueling-animation');
+        if (data.fueling_active) {
+            animation.style.animationPlayState = 'running';
+        } else {
+            animation.style.animationPlayState = 'paused';
+        }
     }
 });

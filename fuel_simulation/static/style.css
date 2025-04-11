@@ -260,3 +260,85 @@ tr:nth-child(even) {
     80% { left: 88%; background-color: #3498db; }
     100% { left: 100%; }
 }
+.hold-created {
+    background-color: #e7f3fe;
+}
+.hold-used {
+    background-color: #fff3cd;
+}
+.hold-returned {
+    background-color: #d4edda;
+}
+.final-frame {
+    background-color: #f8d7da;
+}
+.fuel-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.fuel-btn.stop {
+    background-color: #f44336;
+}
+
+.hold-created { background-color: #e3f2fd; }
+.hold-used-2-3 { background-color: #fff8e1; }
+.hold-returned { background-color: #e8f5e9; }
+.fuel-btn.stop { background: #ff4444; }
+#status[data-status="active"] { color: #2e7d32; }
+
+/* Стили для таблицы холдов */
+#holds-log tr.hold-active {
+    background-color: #e3f2fd;
+}
+
+#holds-log tr.hold-used-2-3 {
+    background-color: #fff8e1;
+}
+
+#holds-log tr.hold-completed {
+    background-color: #e8f5e9;
+}
+
+#holds-log tr.hold-new {
+    background-color: #f3e5f5;
+    animation: highlightHold 2s;
+}
+
+@keyframes highlightHold {
+    0% { background-color: #f3e5f5; }
+    100% { background-color: #e3f2fd; }
+}
+
+/* Стили для статуса */
+#status[data-status="active"] {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+#status[data-status="inactive"] {
+    color: #666;
+}
+
+/* Анимация процесса */
+#fueling-animation {
+    width: 20px;
+    height: 20px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    position: relative;
+    animation: fuelProcess 3s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes fuelProcess {
+    0% { left: 0; background-color: #e74c3c; }
+    25% { background-color: #f39c12; }
+    50% { background-color: #f1c40f; }
+    75% { background-color: #2ecc71; }
+    100% { left: calc(100% - 20px); background-color: #3498db; }
+}
