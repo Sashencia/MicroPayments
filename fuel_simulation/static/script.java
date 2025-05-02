@@ -77,13 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
         holds.forEach(hold => {
             const row = document.createElement('tr');
             
-            // Гарантируем, что холды с remaining <= 0 показываются как completed
-            const isCompleted = hold.status === 'completed' || hold.remaining <= 0;
-            const displayStatus = isCompleted ? 'COMPLETED' : 'ACTIVE';
+            // Определяем статус - если remaining <= 0, то холд завершен
+            const isCompleted = hold.remaining <= 0;
+            const statusText = isCompleted ? 'COMPLETED' : 'ACTIVE';
             
-            // Классы для разных состояний
-            row.className = isCompleted ? 'hold-completed' : 
-                          (hold.used / hold.amount > 0.66 ? 'hold-used-2-3' : 'hold-active');
+            // Устанавливаем классы в зависимости от статуса
+            row.className = isCompleted ? 'hold-completed' : 'hold-active';
             
             row.innerHTML = `
                 <td>${hold.id}</td>
@@ -91,14 +90,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 <td>${hold.amount.toFixed(2)} RUB</td>
                 <td>${hold.used.toFixed(2)} RUB</td>
                 <td>${hold.remaining.toFixed(2)} RUB</td>
-                <td class="hold-status">${displayStatus}</td>
+                <td class="status-cell">${statusText}</td>
                 <td>${hold.transactions.length}</td>
             `;
             
             tbody.appendChild(row);
         });
     }
-
     function updatePacketTable(packets) {
         const tbody = document.querySelector('#packet-log tbody');
         tbody.innerHTML = '';
@@ -133,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    
     // function updateFlowVisualization(data) {
     //     // Рассчитываем текущую скорость потока
     //     const flowRate = data.real_time_data.liters / (data.packet_log.length * 0.1) || 0;

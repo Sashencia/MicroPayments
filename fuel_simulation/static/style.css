@@ -586,20 +586,70 @@ tr:nth-child(even) {
     background: #888;
     border-radius: 4px;
 }
-/* Явные стили для статусов */
-.hold-status {
+/* Жёсткие стили для статусов */
+#holds-log tr.hold-completed {
+    background-color: #e8f5e9 !important; /* Зелёный фон */
+}
+
+#holds-log tr.hold-completed .status-cell {
+    color: #28a745 !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+}
+
+#holds-log tr td.status-cell {
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.hold-completed .hold-status {
-    color: #28a745; /* Зеленый для завершенных */
+/* Стили для контейнера таблицы холдов с прокруткой */
+.holds-container {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 10px;
 }
 
-.hold-active .hold-status {
-    color: #17a2b8; /* Голубой для активных */
+/* Фиксированные заголовки таблицы */
+#holds-log {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.hold-used-2-3 .hold-status {
-    color: #ffc107; /* Желтый для почти использованных */
+#holds-log thead th {
+    position: sticky;
+    top: 0;
+    background: #2c3e50;
+    color: white;
+    z-index: 10;
+}
+
+/* Стили для строк таблицы */
+#holds-log tr.hold-active {
+    background-color: #e3f2fd;
+}
+
+#holds-log tr.hold-completed {
+    background-color: #e8f5e9;
+}
+
+/* Стили для ячейки статуса */
+#holds-log td.status-cell {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#holds-log tr.hold-completed td.status-cell {
+    color: #28a745;
+}
+
+/* Стили скроллбара */
+.holds-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.holds-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
 }
