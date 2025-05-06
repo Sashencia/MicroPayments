@@ -3,67 +3,77 @@ from concurrent import futures
 import micro_payment_pb2 as pb2
 import micro_payment_pb2_grpc as pb2_grpc
 import time
-
+import threading 
 class BankSimulator:
     def __init__(self):
-        self.balance = 100000  # в копейках (1000 руб.)
-        self.hold = 0
+        self.balance = 1000000  # баланс в копейках (10 000 руб.)
+        self.hold_amount = 0
+        self.lock = threading.Lock()
 
-    def make_hold(self, amount):
-        if self.balance >= amount:
-            self.hold += amount
-            self.balance -= amount
-            return True
-        return False
-
-    def charge(self, amount):
-        if amount <= self.hold:
-            self.hold -= amount
-            return True
-        return False
+    def make_hold(self, amount_kopecks):
+        with self.lock:
+            if self.balance >= amount_kopecks:
+                self.hold_amount += amount_kopecks
+                self.balance -= amount_kopecks
+                print(f"✅ Холд установлен: {amount_kopecks / 100} руб.")
+                return True
+            else:
+                print("❌ Недостаточно средств для холда")
+                return False
 
     def release_hold(self):
-        self.balance += self.hold
-        released = self.hold
-        self.hold = 0
-        return released
+        with self.lock:
+            released = self.hold_amount
+            self.hold_amount = 0
+            print(f"🔓 Освобождено: {released / 100} руб.")
+            return released
+
+    def get_balance(self):
+        with self.lock:
+            return self.balance
+
+bank = BankSimulator()
+sessions = {}
 
 class MicroPaymentServicer(pb2_grpc.MicroPaymentServiceServicer):
-    def __init__(self):
-        self.sessions = {}  # session_id → { hold_amount, used }
-
     def StreamPayments(self, request_iterator, context):
-        session_id = f"sess_{int(time.time())}"
-        bank = BankSimulator()
-        bank.make_hold(1000)  # холд 10 рублей
-        self.sessions[session_id] = {"hold": bank.hold, "used": 0}
-
-        print(f"[SERVER] Session started: {session_id}, Hold: {bank.hold} cents")
-
+        session_id = None
         for req in request_iterator:
-            if req.session_id != session_id:
-                continue
+            session_id = req.session_id
+            amount = req.amount_cents
 
-            if bank.hold < 500:  # если холд меньше 5 рублей
-                print("[SERVER] Renewing hold...")
+            if session_id not in sessions:
+                sessions[session_id] = {
+                    "total": 0,
+                    "hold": 10000,  # 100 рублей
+                    "used": 0
+                }
+                print(f"[SERVER] Сессия начата: {session_id}")
+
+            session = sessions[session_id]
+
+            if session["used"] + amount > session["hold"]:
+                print("[SERVER] Холд исчерпан → запрашиваем новый")
                 bank.release_hold()
-                bank.make_hold(1000)
+                bank.make_hold(10000)
+                session["hold"] = 10000
+                session["used"] = 0
 
-            if bank.charge(req.amount_cents):
-                self.sessions[session_id]["used"] += req.amount_cents
-                print(f"[SERVER] Charged: {req.amount_cents / 100} руб. Total: {bank.hold - bank.balance}")
-                yield pb2.PaymentResponse(
-                    success=True,
-                    total_charged=self.sessions[session_id]["used"],
-                    remaining_hold=bank.hold
-                )
-            else:
-                print("[SERVER] Charge failed")
-                yield pb2.PaymentResponse(success=False)
+            session["used"] += amount
+            session["total"] += amount
 
-        # Сессия завершена
-        refund = bank.release_hold()
-        print(f"[SERVER] Session ended: {session_id}. Refunded: {refund / 100} руб.")
+            print(f"[SERVER] Платёж обработан: {amount / 100} руб. Итого: {session['total'] / 100} руб.")
+
+            yield pb2.PaymentResponse(
+                success=True,
+                total_charged=session["total"],
+                remaining_hold=session["hold"] - session["used"]
+            )
+
+        print(f"[SERVER] Сессия завершена: {session_id}. Итого: {session['total'] / 100} руб.")
+        del sessions[session_id]
+        bank.release_hold()
+
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))

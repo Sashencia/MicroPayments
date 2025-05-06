@@ -37,7 +37,7 @@ class MicroPaymentServiceStub(object):
         self.StreamPayments = channel.stream_stream(
                 '/micro.MicroPaymentService/StreamPayments',
                 request_serializer=micro__payment__pb2.PaymentRequest.SerializeToString,
-                response_deserializer=micro__payment__pb2.PaymentResponse.FromString,
+                response_deserializer=micro__payment__pb2.StreamResponse.FromString,
                 _registered_method=True)
 
 
@@ -56,7 +56,7 @@ def add_MicroPaymentServiceServicer_to_server(servicer, server):
             'StreamPayments': grpc.stream_stream_rpc_method_handler(
                     servicer.StreamPayments,
                     request_deserializer=micro__payment__pb2.PaymentRequest.FromString,
-                    response_serializer=micro__payment__pb2.PaymentResponse.SerializeToString,
+                    response_serializer=micro__payment__pb2.StreamResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -85,7 +85,7 @@ class MicroPaymentService(object):
             target,
             '/micro.MicroPaymentService/StreamPayments',
             micro__payment__pb2.PaymentRequest.SerializeToString,
-            micro__payment__pb2.PaymentResponse.FromString,
+            micro__payment__pb2.StreamResponse.FromString,
             options,
             channel_credentials,
             insecure,

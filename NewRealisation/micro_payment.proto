@@ -3,7 +3,7 @@ syntax = "proto3";
 package micro;
 
 service MicroPaymentService {
-  rpc StreamPayments(stream PaymentRequest) returns (stream PaymentResponse);
+  rpc StreamPayments(stream PaymentRequest) returns (stream StreamResponse);
 }
 
 message PaymentRequest {
@@ -11,8 +11,8 @@ message PaymentRequest {
   int32 amount_cents = 2; // сумма в копейках
 }
 
-message PaymentResponse {
+message StreamResponse {
   bool success = 1;
-  int32 total_charged = 2; // всего оплачено в копейках
-  int32 remaining_hold = 3; // остаток холда
+  int32 total_charged = 2; // в копейках
+  int32 remaining_hold = 3; // в копейках
 }

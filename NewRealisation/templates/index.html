@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Микроплатежи</title>
+</head>
+<body>
+    <h1>🎬 Микроплатежи</h1>
+
+    <button onclick="start()">Начать сессию</button>
+    <button onclick="stop()">Остановить</button>
+
+    <p><strong>Баланс:</strong> <span id="balance">—</span> ₽</p>
+    <p><strong>Холд:</strong> <span id="hold">—</span> ₽</p>
+    <p><strong>Использовано из холда:</strong> <span id="used">—</span> ₽</p>
+    <p><strong>Осталось в холде:</strong> <span id="remaining">—</span> ₽</p>
+    <p><strong>Нужен ли новый холд?</strong> <span id="needs_new_hold">Нет</span></p>
+    <p><strong>Всего оплачено:</strong> <span id="total_used">—</span> ₽</p>
+    <!-- <p><strong>Получатель получил:</strong> <span id="recipient_balance">—</span> ₽</p> -->
+
+    <script>
+        function updateStatus() {
+            fetch('/status').then(res => res.json()).then(data => {
+                document.getElementById('balance').textContent = data.balance.toFixed(2);
+                document.getElementById('hold').textContent = data.hold.toFixed(2);
+                document.getElementById('used').textContent = data.used.toFixed(2);
+                document.getElementById('remaining').textContent = data.remaining.toFixed(2);
+                document.getElementById('needs_new_hold').textContent = data.needs_new_hold ? 'Да' : 'Нет';
+                document.getElementById('total_used').textContent = data.total_used.toFixed(2);
+                document.getElementById('recipient_balance').textContent = data.recipient_balance.toFixed(2);
+            });
+        }
+
+        setInterval(updateStatus, 100);
+        updateStatus();
+
+        function start() {
+            fetch('/start', { method: 'POST' });
+        }
+
+        function stop() {
+            fetch('/stop', { method: 'POST' });
+        }
+    </script>
+</body>
+</html>
