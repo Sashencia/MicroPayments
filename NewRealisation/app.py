@@ -4,7 +4,9 @@ import threading
 import time
 import micro_payment_pb2 as pb2
 import micro_payment_pb2_grpc as pb2_grpc
+from Bank_Simulator import BankSimulator
 
+bank_sim = BankSimulator()
 app = Flask(__name__)
 
 # === Эмуляция банковского аккаунта ===
@@ -98,41 +100,54 @@ def connect_to_grpc():
 
 
 # === Функция потоковой отправки платежей ===
+bank_sim = BankSimulator()
+
 def streaming_process(session_id):
     global total_used, real_time_data
-    base_amount_kopecks = 10  # 10 копеек за шаг
-    hold_amount_kopecks = 10000  # 100 рублей
+    base_amount_kopecks = 10
+    hold_amount_kopecks = 10000
 
-    # Устанавливаем первый холд, если его нет
     if bank_account.hold == 0:
         success = bank_account.make_hold(hold_amount_kopecks)
         if not success:
-            print("🚫 Не удалось установить холд")
             stop_streaming.set()
             return
 
     while not stop_streaming.is_set():
-        # Если израсходовано более 2/3 текущего холда → создаём новый
         if bank_account.get_used_hold() >= bank_account.get_total_hold() * 2 / 3:
-            print("🔔 Требуется новый холд")
             bank_account.release_hold()
             bank_account.make_hold(hold_amount_kopecks)
 
-        # Списываем из холда
+        # ⏱️ Засекаем время кадра
+        start_time = time.time()
+
         if bank_account.charge_from_hold(base_amount_kopecks):
             real_time_data["used"] += base_amount_kopecks / 100
             real_time_data["balance"] = bank_account.get_balance()
-            print(f"💸 Отправлено: {base_amount_kopecks / 100} руб. "
-                  f"Осталось в холде: {bank_account.get_remaining_hold()} руб.")
+
+            # 💡 Эмуляция банковских проверок
+            _, verify_delay = bank_sim.verify_hold(base_amount_kopecks)
+            _, notify_delay = bank_sim.notify_recipient_bank(base_amount_kopecks)
 
             try:
+                grpc_start = time.time()
                 stub.StreamPayments(iter([
                     pb2.PaymentRequest(session_id=session_id, amount_cents=base_amount_kopecks)
                 ]))
+                grpc_time = time.time() - grpc_start
             except Exception as e:
                 print("Ошибка при отправке:", e)
                 stop_streaming.set()
                 break
+
+            total_time = time.time() - start_time
+
+            print(f"""📦 Кадр:
+    Проверка холда: {verify_delay:.4f} сек
+    Уведомление получателя: {notify_delay:.4f} сек
+    gRPC передача: {grpc_time:.4f} сек
+    ➕ Всего на кадр: {total_time:.4f} сек
+""")
         else:
             print("🚫 Недостаточно средств в холде")
             stop_streaming.set()
@@ -140,9 +155,9 @@ def streaming_process(session_id):
 
         time.sleep(0.005)
 
-    # Освобождаем остаток холда и завершаем сессию
     print("🏁 Сессия завершена. Остаток холда освобождён.")
     bank_account.release_hold()
+
 
 
 # === API маршруты ===
