@@ -1,19 +1,63 @@
+# bank_simulator.py
 import time
+import jwt
 import random
 
-class BankSimulator:
+JWT_SECRET = "your-secret-key"
+JWT_ALGORITHM = "HS256"
+
+
+class BankAccount:
+    def __init__(self, balance_kopecks):
+        self.balance = balance_kopecks
+        self.holded = 0
+
+    def charge_from_hold(self, amount_kopecks):
+        if self.balance >= amount_kopecks:
+            self.balance -= amount_kopecks
+            self.holded += amount_kopecks
+            return True
+        return False
+
+    def release_hold(self, amount_kopecks):
+        if self.holded >= amount_kopecks:
+            self.holded -= amount_kopecks
+            return True
+        return False
+
+    def __repr__(self):
+        return f"<BankAccount balance={self.balance}, holded={self.holded}>"
+
+
+class RecipientAccount:
     def __init__(self):
-        self.min_delay = 0.005  # минимальная задержка
-        self.max_delay = 0.020  # максимальная задержка
+        self.received = 0
 
-    def verify_hold(self, amount_kopecks):
-        # Эмуляция проверки холда в банке отправителя
-        delay = random.uniform(self.min_delay, self.max_delay)
-        time.sleep(delay)
-        return True, delay
+    def credit(self, amount_kopecks):
+        self.received += amount_kopecks
 
-    def notify_recipient_bank(self, amount_kopecks):
-        # Эмуляция связи с банком-получателем
-        delay = random.uniform(self.min_delay, self.max_delay)
-        time.sleep(delay)
-        return True, delay
+    def __repr__(self):
+        return f"<RecipientAccount received={self.received}>"
+
+
+def simulate_internal_check():
+    # Имитация обработки внутри банка (например, AML или другие проверки)
+    time.sleep(random.uniform(0.01, 0.05))
+
+
+def generate_jwt(user_id):
+    payload = {
+        "user_id": user_id,
+        "timestamp": int(time.time())
+    }
+    return jwt.encode(payload, JWT_SECRET, algorithm=JWT_ALGORITHM)
+
+
+def verify_jwt(token):
+    try:
+        payload = jwt.decode(token, JWT_SECRET, algorithms=[JWT_ALGORITHM])
+        return payload
+    except jwt.ExpiredSignatureError:
+        return None
+    except jwt.InvalidTokenError:
+        return None

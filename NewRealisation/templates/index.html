@@ -3,44 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <title>Микроплатежи</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .status {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
 </head>
 <body>
-    <h1>🎬 Микроплатежи</h1>
+    <h1>💸 Система микроплатежей</h1>
 
-    <button onclick="start()">Начать сессию</button>
-    <button onclick="stop()">Остановить</button>
+    <button onclick="startSession()">Начать сессию</button>
+    <button onclick="stopSession()">Остановить сессию</button>
 
-    <p><strong>Баланс:</strong> <span id="balance">—</span> ₽</p>
-    <p><strong>Холд:</strong> <span id="hold">—</span> ₽</p>
-    <p><strong>Использовано из холда:</strong> <span id="used">—</span> ₽</p>
-    <p><strong>Осталось в холде:</strong> <span id="remaining">—</span> ₽</p>
-    <p><strong>Нужен ли новый холд?</strong> <span id="needs_new_hold">Нет</span></p>
-    <p><strong>Всего оплачено:</strong> <span id="total_used">—</span> ₽</p>
-    <!-- <p><strong>Получатель получил:</strong> <span id="recipient_balance">—</span> ₽</p> -->
+    <div class="status">
+        <h2>📊 Текущий статус:</h2>
+        <pre id="status">Загрузка данных...</pre>
+    </div>
 
     <script>
-        function updateStatus() {
-            fetch('/status').then(res => res.json()).then(data => {
-                document.getElementById('balance').textContent = data.balance.toFixed(2);
-                document.getElementById('hold').textContent = data.hold.toFixed(2);
-                document.getElementById('used').textContent = data.used.toFixed(2);
-                document.getElementById('remaining').textContent = data.remaining.toFixed(2);
-                document.getElementById('needs_new_hold').textContent = data.needs_new_hold ? 'Да' : 'Нет';
-                document.getElementById('total_used').textContent = data.total_used.toFixed(2);
-                document.getElementById('recipient_balance').textContent = data.recipient_balance.toFixed(2);
+        function authHeader() {
+            return btoa("admin:securepassword123");
+        }
+
+        async function startSession() {
+            const res = await fetch('/start', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Basic ' + authHeader()
+                }
             });
+            const data = await res.json();
+            console.log("Сессия начата:", data);
         }
 
-        setInterval(updateStatus, 100);
-        updateStatus();
-
-        function start() {
-            fetch('/start', { method: 'POST' });
+        async function stopSession() {
+            const res = await fetch('/stop', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Basic ' + authHeader()
+                }
+            });
+            const data = await res.json();
+            console.log("Сессия остановлена:", data);
         }
 
-        function stop() {
-            fetch('/stop', { method: 'POST' });
+        async function updateStatus() {
+            const user = "admin";
+            const pass = "securepassword123";
+            const headers = new Headers();
+            headers.append('Authorization', 'Basic ' + btoa(user + ":" + pass));
+
+            const res = await fetch('/status', { headers: headers });
+            const data = await res.json();
+            document.getElementById('status').textContent = JSON.stringify(data, null, 2);
         }
+
+        setInterval(updateStatus, 1000);
     </script>
 </body>
 </html>
