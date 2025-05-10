@@ -2,85 +2,211 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Микроплатежи</title>
+    <title>Микроплатежи v2</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 30px;
-            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
         }
-        h1 {
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
             color: #2c3e50;
+            text-align: center;
         }
-        button {
-            padding: 10px 20px;
-            margin: 10px 5px;
+        .controls button {
+            padding: 10px 15px;
             font-size: 16px;
             cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background-color 0.3s;
         }
-        .status {
-            margin-top: 30px;
+        .controls button:hover {
+            background-color: #2980b9;
+        }
+        .status-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .card {
+            background: #ecf0f1;
             padding: 15px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            border-radius: 5px;
         }
-        pre {
-            white-space: pre-wrap;
-            word-wrap: break-word;
+        .card h3 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+        .card p {
+            margin: 5px 0;
+        }
+        .card strong {
+            color: #7f8c8d;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #bdc3c7;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #fdfefe;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f8f9f9;
         }
     </style>
 </head>
 <body>
-    <h1>💸 Система микроплатежей</h1>
+    <div class="container">
+        <h1>💸 Система Микроплатежей v2</h1>
+        <div class="controls" style="text-align: center; margin-bottom: 20px;">
+            <button onclick="startSession()">Начать сессию</button>
+            <button onclick="stopSession()">Остановить сессию</button>
+        </div>
 
-    <button onclick="startSession()">Начать сессию</button>
-    <button onclick="stopSession()">Остановить сессию</button>
+        <div class="status-grid">
+            <div class="card">
+                <h3>Общий Баланс</h3>
+                <p><strong>Баланс:</strong> <span id="balance">-</span> руб.</p>
+            </div>
+            <div class="card">
+                <h3>Текущий Активный Холд</h3>
+                <p><strong>Всего:</strong> <span id="current_hold_total">-</span> руб.</p>
+                <p><strong>Использовано:</strong> <span id="current_hold_used">-</span> руб.</p>
+                <p><strong>Остаток:</strong> <span id="current_hold_remaining">-</span> руб.</p>
+            </div>
+            <div class="card">
+                <h3>Следующий Холд</h3>
+                <p><strong>Зарезервировано:</strong> <span id="next_hold_total">-</span> руб.</p>
+                <p><strong>Общее обеспечение холдами:</strong> <span id="overall_secured">-</span> руб.</p>
+            </div>
+             <div class="card">
+                <h3>Статистика Сессии</h3>
+                <p><strong>Всего использовано за сессию:</strong> <span id="total_session_used">-</span> руб.</p>
+                <p><strong>Длительность сессии:</strong> <span id="session_duration">-</span> сек.</p>
+            </div>
+            <div class="card">
+                <h3>Производительность</h3>
+                <p><strong>Среднее время запроса холда:</strong> <span id="avg_hold_time">-</span> мс.</p>
+                <p><strong>Среднее время отправки платежа:</strong> <span id="avg_payment_time">-</span> мс.</p>
+            </div>
+        </div>
 
-    <div class="status">
-        <h2>📊 Текущий статус:</h2>
-        <pre id="status">Загрузка данных...</pre>
+        <h2>⏱️ История Операций Холда</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Начало</th>
+                    <th>Конец</th>
+                    <th>Статус</th>
+                    <th>Время (мс)</th>
+                </tr>
+            </thead>
+            <tbody id="hold_history_table_body"></tbody>
+        </table>
     </div>
 
     <script>
-        function authHeader() {
-            return btoa("admin:securepassword123");
+        function getAuthHeaders() {
+            return {
+                'Authorization': 'Basic ' + btoa("admin:securepassword123")
+            };
+        }
+
+        async function fetchStatus() {
+            try {
+                const res = await fetch('/status', { headers: getAuthHeaders() });
+                if (!res.ok) {
+                    console.error("Failed to fetch status:", res.status);
+                    return;
+                }
+                const data = await res.json();
+
+                document.getElementById('balance').textContent = data.balance.toFixed(2);
+                
+                document.getElementById('current_hold_total').textContent = data.current_active_hold.total.toFixed(2);
+                document.getElementById('current_hold_used').textContent = data.current_active_hold.used.toFixed(2);
+                document.getElementById('current_hold_remaining').textContent = data.current_active_hold.remaining.toFixed(2);
+                
+                document.getElementById('next_hold_total').textContent = data.next_pending_hold.toFixed(2);
+                document.getElementById('overall_secured').textContent = data.overall_secured_by_holds.toFixed(2);
+                
+                document.getElementById('total_session_used').textContent = data.total_session_used.toFixed(2);
+                document.getElementById('session_duration').textContent = data.session_duration_seconds.toFixed(2);
+                
+                document.getElementById('avg_hold_time').textContent = data.avg_hold_request_time_ms.toFixed(2);
+                document.getElementById('avg_payment_time').textContent = data.avg_payment_time_ms.toFixed(2);
+
+                const historyTableBody = document.getElementById('hold_history_table_body');
+                historyTableBody.innerHTML = ""; // Clear previous entries
+                if (data.hold_requests_history && data.hold_requests_history.length > 0) {
+                    data.hold_requests_history.forEach(req => {
+                        const row = historyTableBody.insertRow();
+                        row.insertCell().textContent = new Date(req.start_time_str).toLocaleString();
+                        row.insertCell().textContent = new Date(req.end_time_str).toLocaleString();
+                        row.insertCell().textContent = req.status;
+                        row.insertCell().textContent = req.duration_ms.toFixed(2);
+                    });
+                } else {
+                    const row = historyTableBody.insertRow();
+                    const cell = row.insertCell();
+                    cell.colSpan = 4;
+                    cell.textContent = "Нет данных по операциям холда.";
+                    cell.style.textAlign = "center";
+                }
+            } catch (error) {
+                console.error("Error fetching or processing status:", error);
+            }
         }
 
         async function startSession() {
-            const res = await fetch('/start', {
-                method: 'POST',
-                headers: {
-                    'Authorization': 'Basic ' + authHeader()
-                }
-            });
-            const data = await res.json();
-            console.log("Сессия начата:", data);
+            try {
+                await fetch('/start', { method: 'POST', headers: getAuthHeaders() });
+                console.log("Session start requested.");
+                fetchStatus(); // Fetch status immediately after starting
+            } catch (error) {
+                console.error("Error starting session:", error);
+            }
         }
 
         async function stopSession() {
-            const res = await fetch('/stop', {
-                method: 'POST',
-                headers: {
-                    'Authorization': 'Basic ' + authHeader()
-                }
-            });
-            const data = await res.json();
-            console.log("Сессия остановлена:", data);
+            try {
+                await fetch('/stop', { method: 'POST', headers: getAuthHeaders() });
+                console.log("Session stop requested.");
+                fetchStatus(); // Fetch status immediately after stopping to get final state
+            } catch (error) {
+                console.error("Error stopping session:", error);
+            }
         }
 
-        async function updateStatus() {
-            const user = "admin";
-            const pass = "securepassword123";
-            const headers = new Headers();
-            headers.append('Authorization', 'Basic ' + btoa(user + ":" + pass));
-
-            const res = await fetch('/status', { headers: headers });
-            const data = await res.json();
-            document.getElementById('status').textContent = JSON.stringify(data, null, 2);
-        }
-
-        setInterval(updateStatus, 1000);
+        // Fetch status periodically
+        setInterval(fetchStatus, 1000);
+        // Fetch status on load
+        document.addEventListener('DOMContentLoaded', fetchStatus);
     </script>
 </body>
 </html>
