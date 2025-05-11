@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Микроплатежи v2</title>
+    <title>Микроплатежи v2.3</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -82,7 +82,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>💸 Система Микроплатежей v2</h1>
+        <h1>💸 Система Микроплатежей v2.3</h1>
         <div class="controls" style="text-align: center; margin-bottom: 20px;">
             <button onclick="startSession()">Начать сессию</button>
             <button onclick="stopSession()">Остановить сессию</button>
@@ -91,7 +91,7 @@
         <div class="status-grid">
             <div class="card">
                 <h3>Общий Баланс</h3>
-                <p><strong>Баланс:</strong> <span id="balance">-</span> руб.</p>
+                <p><strong>Баланс:</strong> <span id="balance">0.00</span> руб.</p>
             </div>
             <div class="card">
                 <h3>Текущий Активный Холд</h3>
@@ -106,7 +106,7 @@
             </div>
              <div class="card">
                 <h3>Статистика Сессии</h3>
-                <p><strong>Всего использовано за сессию:</strong> <span id="total_session_used">-</span> руб.</p>
+                <p><strong>Всего использовано за сессию:</strong> <span id="total_session_used">0.00</span> руб.</p>
                 <p><strong>Длительность сессии:</strong> <span id="session_duration">-</span> сек.</p>
             </div>
             <div class="card">
@@ -131,10 +131,41 @@
     </div>
 
     <script>
+        const animationStepTime = 50; // ms for animation interval
+        const statusPollTime = 200;    // ms for polling /status
+        const precision = 0.01;
+
+        let animators = {
+            total_session_used: { current: 0.00, target: 0.00, intervalId: null, elementId: 'total_session_used', initialized: false },
+            balance: { current: 0.00, target: 0.00, intervalId: null, elementId: 'balance', initialized: false }
+        };
+        let globalIsSessionActive = false;
+        let statusPollIntervalId = null;
+
         function getAuthHeaders() {
             return {
                 'Authorization': 'Basic ' + btoa("admin:securepassword123")
             };
+        }
+
+        function runAnimationStep(animatorKey) {
+            const animator = animators[animatorKey];
+            
+            if (!globalIsSessionActive || Math.abs(animator.current - animator.target) < precision) {
+                animator.current = animator.target;
+                if (animator.intervalId) {
+                    clearInterval(animator.intervalId);
+                    animator.intervalId = null;
+                }
+            } else {
+                let diff = animator.target - animator.current;
+                let step = diff * 0.15; // Slightly faster animation
+                if (Math.abs(step) < precision && Math.abs(diff) >= precision) {
+                    step = precision * Math.sign(diff);
+                }
+                animator.current += step;
+            }
+            document.getElementById(animator.elementId).textContent = animator.current.toFixed(2);
         }
 
         async function fetchStatus() {
@@ -145,31 +176,61 @@
                     return;
                 }
                 const data = await res.json();
+                globalIsSessionActive = data.is_session_active;
 
-                document.getElementById('balance').textContent = data.balance.toFixed(2);
-                
+                // Update targets for animated values
+                animators.total_session_used.target = data.total_session_used;
+                animators.balance.target = data.balance;
+
+                // Initialize if not yet done (e.g., on page load)
+                if (!animators.total_session_used.initialized) {
+                    animators.total_session_used.current = data.total_session_used;
+                    document.getElementById(animators.total_session_used.elementId).textContent = animators.total_session_used.current.toFixed(2);
+                    animators.total_session_used.initialized = true;
+                }
+                if (!animators.balance.initialized) {
+                    animators.balance.current = data.balance;
+                    document.getElementById(animators.balance.elementId).textContent = animators.balance.current.toFixed(2);
+                    animators.balance.initialized = true;
+                }
+
+                // Manage animations based on session state
+                for (const key in animators) {
+                    const animator = animators[key];
+                    if (globalIsSessionActive) {
+                        if (!animator.intervalId && animator.initialized) {
+                            animator.intervalId = setInterval(() => runAnimationStep(key), animationStepTime);
+                        }
+                    } else {
+                        if (animator.intervalId) {
+                            clearInterval(animator.intervalId);
+                            animator.intervalId = null;
+                        }
+                        // Ensure final value is set when session is not active
+                        animator.current = animator.target;
+                        document.getElementById(animator.elementId).textContent = animator.current.toFixed(2);
+                    }
+                }
+
+                // Update non-animated fields
                 document.getElementById('current_hold_total').textContent = data.current_active_hold.total.toFixed(2);
                 document.getElementById('current_hold_used').textContent = data.current_active_hold.used.toFixed(2);
                 document.getElementById('current_hold_remaining').textContent = data.current_active_hold.remaining.toFixed(2);
-                
                 document.getElementById('next_hold_total').textContent = data.next_pending_hold.toFixed(2);
                 document.getElementById('overall_secured').textContent = data.overall_secured_by_holds.toFixed(2);
-                
-                document.getElementById('total_session_used').textContent = data.total_session_used.toFixed(2);
                 document.getElementById('session_duration').textContent = data.session_duration_seconds.toFixed(2);
-                
                 document.getElementById('avg_hold_time').textContent = data.avg_hold_request_time_ms.toFixed(2);
                 document.getElementById('avg_payment_time').textContent = data.avg_payment_time_ms.toFixed(2);
 
                 const historyTableBody = document.getElementById('hold_history_table_body');
-                historyTableBody.innerHTML = ""; // Clear previous entries
+                historyTableBody.innerHTML = ""; 
                 if (data.hold_requests_history && data.hold_requests_history.length > 0) {
                     data.hold_requests_history.forEach(req => {
                         const row = historyTableBody.insertRow();
                         row.insertCell().textContent = new Date(req.start_time_str).toLocaleString();
                         row.insertCell().textContent = new Date(req.end_time_str).toLocaleString();
                         row.insertCell().textContent = req.status;
-                        row.insertCell().textContent = req.duration_ms.toFixed(2);
+                        row.insertCell().textContent = req.duration_ms ? req.duration_ms.toFixed(2) : "N/A";
                     });
                 } else {
                     const row = historyTableBody.insertRow();
@@ -178,6 +239,7 @@
                     cell.textContent = "Нет данных по операциям холда.";
                     cell.style.textAlign = "center";
                 }
+
             } catch (error) {
                 console.error("Error fetching or processing status:", error);
             }
@@ -187,7 +249,23 @@
             try {
                 await fetch('/start', { method: 'POST', headers: getAuthHeaders() });
                 console.log("Session start requested.");
-                fetchStatus(); // Fetch status immediately after starting
+                
+                // Reset total_session_used for new session
+                animators.total_session_used.current = 0.00;
+                animators.total_session_used.target = 0.00;
+                animators.total_session_used.initialized = true; 
+                document.getElementById(animators.total_session_used.elementId).textContent = "0.00";
+
+                // Balance will be initialized by the first fetchStatus call after session start
+                animators.balance.initialized = false; 
+
+                // Clear any old animation intervals
+                for (const key in animators) {
+                    if (animators[key].intervalId) clearInterval(animators[key].intervalId);
+                    animators[key].intervalId = null;
+                }
+                globalIsSessionActive = true; // Tentatively set, fetchStatus will confirm
+                fetchStatus(); // Fetch status immediately to update UI and start animations
             } catch (error) {
                 console.error("Error starting session:", error);
             }
@@ -197,16 +275,21 @@
             try {
                 await fetch('/stop', { method: 'POST', headers: getAuthHeaders() });
                 console.log("Session stop requested.");
-                fetchStatus(); // Fetch status immediately after stopping to get final state
+                globalIsSessionActive = false; // Tentatively set, fetchStatus will confirm and stop animations
+                fetchStatus(); // Fetch status immediately to update UI and stop animations
             } catch (error) {
                 console.error("Error stopping session:", error);
             }
         }
 
-        // Fetch status periodically
-        setInterval(fetchStatus, 1000);
-        // Fetch status on load
-        document.addEventListener('DOMContentLoaded', fetchStatus);
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('total_session_used').textContent = "0.00";
+            document.getElementById('balance').textContent = "---.--"; // Initial placeholder
+            fetchStatus(); // Initial fetch
+            if (statusPollIntervalId) clearInterval(statusPollIntervalId);
+            statusPollIntervalId = setInterval(fetchStatus, statusPollTime); // Start polling
+        });
+
     </script>
 </body>
 </html>

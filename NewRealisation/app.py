@@ -76,7 +76,7 @@ if not all(os.path.exists(f) for f in ["cert.pem", "key.pem", "ca.crt", "server.
     generate_grpc_certs()
     print("✅ Все сертификаты успешно созданы!")
 
-app = Flask(__name__, template_folder="templates") # Ensure template_folder is set
+app = Flask(__name__, template_folder="templates")
 app.config["SECRET_KEY"] = os.urandom(32)
 app.config["SESSION_COOKIE_SECURE"] = True
 app.config["SESSION_COOKIE_HTTPONLY"] = True
@@ -139,7 +139,7 @@ class BankAccount:
                     log_entry["status"] = "Недостаточно средств для резервирования следующего холда"
             else:
                 log_entry["status"] = "Текущий и следующий холд уже установлены"
-                success_status = True # Considered success as no action needed
+                success_status = True
         
         op_end_time = time.perf_counter()
         duration_ms = (op_end_time - op_start_time) * 1000
@@ -179,7 +179,7 @@ class BankAccount:
             self.balance += released_amount
             if released_amount > 0:
                 print(f"🔓 Все холды освобождены. Возвращено на баланс: {released_amount / 100} руб.")
-            self.hold_history_log.clear() # Clear history on release
+            self.hold_history_log.clear()
             return released_amount
 
     def get_current_hold_total(self):
@@ -209,6 +209,7 @@ stop_streaming = threading.Event()
 real_time_data = {"used": 0.0, "balance": bank_account.get_balance()}
 payment_times_log = []
 session_start_time = None
+session_end_time = None # Added to store session end time
 
 def connect_to_grpc():
     global stub
@@ -315,18 +316,19 @@ def streaming_process(session_id_arg):
 
 @app.route("/")
 def index():
-    return render_template("index.html") # Updated to new HTML filename
+    return render_template("index.html")
 
 @app.route("/start", methods=["POST"])
 @auth_required
 @csrf.exempt
 def start_session_route():
-    global session_id, stop_streaming, real_time_data, session_start_time, payment_times_log
+    global session_id, stop_streaming, real_time_data, session_start_time, session_end_time, payment_times_log
     real_time_data["used"] = 0.0
-    bank_account.release_all_holds() 
+    bank_account.release_all_holds()
     payment_times_log.clear()
     session_id = f"sess_{int(time.time())}"
     session_start_time = time.time()
+    session_end_time = None # Reset session end time
     stop_streaming.clear()
     threading.Thread(target=streaming_process, args=(session_id,), daemon=True).start()
     return jsonify({"session_id": session_id})
@@ -335,20 +337,20 @@ def start_session_route():
 @auth_required
 @csrf.exempt
 def stop_session():
-    global session_start_time
+    global session_end_time
     stop_streaming.set()
-    # session_start_time = None # Or keep it to show final duration until next start
+    session_end_time = time.time() # Record session end time
     return jsonify({"status": "stopped"})
 
 @app.route("/status", methods=["GET"])
 @auth_required
 def status():
-    global session_start_time, payment_times_log
+    global session_start_time, session_end_time, payment_times_log
     with bank_account.lock:
         current_hold_total_kopecks = bank_account.current_hold_total
         current_hold_used_kopecks = bank_account.current_hold_used
         next_hold_total_kopecks = bank_account.next_hold_total
-        hold_history = list(bank_account.hold_history_log) # Make a copy
+        hold_history = list(bank_account.hold_history_log)
 
     needs_new_hold_check = False
     if current_hold_total_kopecks > 0 and next_hold_total_kopecks == 0:
@@ -356,16 +358,17 @@ def status():
             needs_new_hold_check = True
 
     session_duration_seconds = 0
-    if session_start_time and not stop_streaming.is_set():
-        session_duration_seconds = time.time() - session_start_time
-    elif session_start_time and stop_streaming.is_set(): # Keep last duration if stopped
-         session_duration_seconds = time.time() - session_start_time # This will keep increasing, better to store end time
-    # A better way for stopped duration would be to record end_time on stop_session
-
+    if session_start_time:
+        # If session_end_time is set (session stopped), use it. Otherwise (session active), use current time.
+        current_or_end_time = session_end_time if session_end_time else time.time()
+        session_duration_seconds = current_or_end_time - session_start_time
+        
     avg_hold_time_ms = 0
     if hold_history:
-        total_hold_time = sum(h.get('duration_ms', 0) for h in hold_history if h.get('duration_ms'))
-        avg_hold_time_ms = total_hold_time / len(hold_history)
+        valid_hold_durations = [h.get('duration_ms', 0) for h in hold_history if h.get('duration_ms') is not None]
+        if valid_hold_durations:
+            total_hold_time = sum(valid_hold_durations)
+            avg_hold_time_ms = total_hold_time / len(valid_hold_durations)
         
     avg_payment_time_ms = 0
     if payment_times_log:
@@ -385,15 +388,14 @@ def status():
         "session_duration_seconds": round(session_duration_seconds, 2),
         "avg_hold_request_time_ms": round(avg_hold_time_ms, 2),
         "avg_payment_time_ms": round(avg_payment_time_ms, 2),
-        "hold_requests_history": hold_history
+        "hold_requests_history": hold_history,
+        "is_session_active": not stop_streaming.is_set() # Added to help client side logic
     })
 
 if __name__ == "__main__":
     if not os.path.exists("templates"):
         os.makedirs("templates")
         print("Created templates directory")
-    # Create a dummy index_v2.html if it doesn't exist for testing
-    # The actual HTML will be written in the next step
     if not os.path.exists("templates/index.html"):
         with open("templates/index.html", "w") as f_html:
             f_html.write("<h1>Placeholder - Will be replaced</h1>")
