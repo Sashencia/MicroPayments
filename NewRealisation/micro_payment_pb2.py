@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13micro_payment.proto\x12\x05micro\":\n\x0ePaymentRequest\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12\x14\n\x0c\x61mount_cents\x18\x02 \x01(\x05\"P\n\x0eStreamResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x15\n\rtotal_charged\x18\x02 \x01(\x05\x12\x16\n\x0eremaining_hold\x18\x03 \x01(\x05\x32Y\n\x13MicroPaymentService\x12\x42\n\x0eStreamPayments\x12\x15.micro.PaymentRequest\x1a\x15.micro.StreamResponse(\x01\x30\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13micro_payment.proto\x12\x05micro\"N\n\x0ePaymentRequest\x12\x12\n\nsession_id\x18\x01 \x01(\t\x12\x12\n\nstation_id\x18\x02 \x01(\x05\x12\x14\n\x0c\x61mount_cents\x18\x03 \x01(\x02\"P\n\x0eStreamResponse\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x15\n\rtotal_charged\x18\x02 \x01(\x05\x12\x16\n\x0eremaining_hold\x18\x03 \x01(\x05\x32Y\n\x13MicroPaymentService\x12\x42\n\x0eStreamPayments\x12\x15.micro.PaymentRequest\x1a\x15.micro.StreamResponse(\x01\x30\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,9 +32,9 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'micro_payment_pb2', _global
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
   _globals['_PAYMENTREQUEST']._serialized_start=30
-  _globals['_PAYMENTREQUEST']._serialized_end=88
-  _globals['_STREAMRESPONSE']._serialized_start=90
-  _globals['_STREAMRESPONSE']._serialized_end=170
-  _globals['_MICROPAYMENTSERVICE']._serialized_start=172
-  _globals['_MICROPAYMENTSERVICE']._serialized_end=261
+  _globals['_PAYMENTREQUEST']._serialized_end=108
+  _globals['_STREAMRESPONSE']._serialized_start=110
+  _globals['_STREAMRESPONSE']._serialized_end=190
+  _globals['_MICROPAYMENTSERVICE']._serialized_start=192
+  _globals['_MICROPAYMENTSERVICE']._serialized_end=281
 # @@protoc_insertion_point(module_scope)

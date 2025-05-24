@@ -8,26 +8,27 @@ JWT_ALGORITHM = "HS256"
 
 
 class BankAccount:
-    def __init__(self, balance_kopecks):
-        self.balance = balance_kopecks
+    def __init__(self, balance_rubles=0.0):
+        self.balance = int(balance_rubles * 100)  # храним в копейках
         self.holded = 0
 
-    def charge_from_hold(self, amount_kopecks):
+    def get_balance(self):
+        return self.balance / 100.0  # возвращаем в рублях
+
+    def charge_from_hold(self, amount_rubles):
+        amount_kopecks = int(amount_rubles * 100)
         if self.balance >= amount_kopecks:
             self.balance -= amount_kopecks
             self.holded += amount_kopecks
             return True
         return False
 
-    def release_hold(self, amount_kopecks):
+    def release_hold(self, amount_rubles):
+        amount_kopecks = int(amount_rubles * 100)
         if self.holded >= amount_kopecks:
             self.holded -= amount_kopecks
             return True
         return False
-
-    def __repr__(self):
-        return f"<BankAccount balance={self.balance}, holded={self.holded}>"
-
 
 class RecipientAccount:
     def __init__(self):
